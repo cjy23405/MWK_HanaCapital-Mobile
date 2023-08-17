@@ -1,0 +1,9 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+# .eslintcache
+HomeView.vue
+
+src/assets/_dummyData/견적서asis/

@@ -1,0 +1,124 @@
+.board {
+  display: block;
+
+  &__list {
+    @include reset-list;
+  }
+
+  &__item {
+    & + & {
+      margin-top: 32px;
+    }
+
+    &--mark {
+      .board__title-text {
+        color: $color-green-50;
+        font-weight: 700;
+      }
+    }
+
+    &--hidden {
+      .board__title-text,
+      .board__info-item {
+        color: $color-gray-40;
+      }
+    }
+  }
+
+  &__link {
+    @include reset-button;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  &__title {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    & + .board__text {
+      margin-top: 4px;
+    }
+  }
+
+  &__title-text {
+    display: block;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin: 0;
+    @include font-size-default(16);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__sub {
+    flex: none;
+    position: relative;
+    display: block;
+    @include font-size-default(13);
+    font-weight: 300;
+    margin-left: 17px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 12px;
+      background-color: $color-gray-30;
+      position: absolute;
+      top: 50%;
+      left: -9px;
+      margin-top: -6px;
+    }
+  }
+
+  &__text {
+    display: block;
+    @include font-size-default(13);
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+
+    &-item {
+      flex: none;
+      position: relative;
+      display: block;
+      @include font-size-default(13);
+      font-weight: 300;
+
+      & + & {
+        padding-left: 13px;
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 6px;
+          margin-top: -6px;
+          width: 1px;
+          height: 12px;
+          background-color: $color-gray-30;
+        }
+      }
+
+      &--hits {
+        color: $color-gray-70;
+      }
+    }
+  }
+}

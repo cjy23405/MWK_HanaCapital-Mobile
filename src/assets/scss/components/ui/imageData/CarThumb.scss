@@ -1,0 +1,52 @@
+.car-thumb {
+  display: block;
+  position: relative;
+  width: 70px;
+
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 68.571429%;
+  }
+
+  &__img {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  &--size {
+    &-medium {
+      width: 140px;
+    }
+    &-large {
+      width: 192px;
+    }
+  }
+
+  &:empty,
+  &:global(.is-error) {
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 137.142857%;
+      height: 100%;
+      transform: translateX(-50%);
+      background: url('@/assets/images/common/img-car-default.svg') no-repeat
+        50% 50% / auto 100%;
+    }
+
+    .car-thumb {
+      &__img {
+        display: none;
+      }
+    }
+  }
+}

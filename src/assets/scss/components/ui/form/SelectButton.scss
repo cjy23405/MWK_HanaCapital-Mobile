@@ -1,0 +1,88 @@
+.select-button {
+  @include reset-button;
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  padding-right: 20px;
+  @include font-size-head(18);
+  min-height: #{$line-height-head}em;
+  text-align: left;
+
+  &__placeholder {
+    display: block;
+    color: $color-gray-60;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__icon {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+
+    svg {
+      display: block;
+      position: relative;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+
+      * {
+        fill: $color-gray-60;
+      }
+    }
+  }
+
+  &[disabled] {
+    .select-button__text {
+      color: $color-gray-40;
+    }
+
+    .select-button__icon {
+      svg {
+        * {
+          fill: $color-gray-40;
+        }
+      }
+    }
+  }
+
+  &--theme-sort {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 16px;
+    @include font-size-default(12);
+    color: $color-gray-60;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 100%;
+      height: 100%;
+      padding: 8px;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .select-button {
+      &__icon {
+        width: 14px;
+        height: 14px;
+        margin-top: -7px;
+      }
+    }
+  }
+}

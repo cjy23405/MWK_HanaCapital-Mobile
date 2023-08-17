@@ -1,0 +1,26 @@
+.progress {
+  display: flex;
+  align-items: center;
+  padding: 19px 20px 11px;
+  transition: background-color 0.2s;
+
+  &__bar {
+    flex: 1;
+    min-width: 0;
+    border-radius: 100px;
+    height: 4px;
+    background-color: $color-gray-15;
+
+    &-active {
+      width: 0;
+      height: 100%;
+      border-radius: 100px;
+      background-color: $color-navy-50;
+      transition: width 0.2s;
+    }
+  }
+
+  :global(.is-sticky) & {
+    background-color: $color-white;
+  }
+}

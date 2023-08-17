@@ -1,0 +1,102 @@
+:global(.page-onboarding) {
+  background-color: $color-gray-05;
+}
+
+.slide {
+  flex: 1;
+
+  &__block {
+    padding-bottom: 122px;
+    text-align: center;
+    height: 100vh;
+    min-height: 572px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &__head {
+    flex: none;
+    padding: 58px 0 40px;
+  }
+
+  &__title {
+    margin: 0;
+    @include font-size-head(20);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    font-weight: 300;
+  }
+
+  &__image {
+    flex: none;
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 83.333333%;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  :global(.swiper) {
+    height: 100vh;
+    min-height: 572px;
+  }
+}
+
+.foot {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  width: 100%;
+
+  &__buttons {
+    padding: 16px 20px;
+  }
+}
+
+.pagination {
+  padding: 16px 0;
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+
+  :global(.swiper-pagination-bullet) {
+    display: inline-block;
+    vertical-align: top;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: $color-gray-50;
+    transition: width 0.3s, background-color 0.3s;
+
+    & + :global(.swiper-pagination-bullet) {
+      margin-left: 5px;
+    }
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    width: 10px;
+    background-color: $color-black;
+  }
+}

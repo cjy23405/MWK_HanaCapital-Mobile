@@ -1,0 +1,23 @@
+.invalid {
+  display: block;
+
+  &__message {
+    display: none;
+  }
+
+  &--error {
+    .invalid__message {
+      display: block;
+    }
+
+    .invalid__help {
+      display: none;
+    }
+  }
+
+  &--disabled {
+    .invalid__help {
+      color: $color-gray-40;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.inline-alert {
+  position: relative;
+  padding: 12px 16px 12px 34px;
+  border-radius: 8px;
+  @include font-size-default(12);
+  background-color: rgba($color-green-50, 0.06);
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    width: 14px;
+    height: #{$line-height-default}em;
+    background: url('@/assets/images/icon/alert-complete.svg') no-repeat 50% 50% /
+      100% auto;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-green-50;
+  }
+
+  &--error {
+    background-color: rgba($color-semantic-essential, 0.06);
+
+    &::before {
+      background-image: url('@/assets/images/icon/alert-error.svg');
+    }
+
+    .inline-alert__text {
+      color: $color-semantic-essential;
+    }
+  }
+
+  &--complete {
+    background-color: rgba($color-navy-50, 0.06);
+
+    &::before {
+      background-image: url('@/assets/images/icon/alert-complete-navy.svg');
+    }
+
+    .inline-alert__text {
+      color: $color-navy-50;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.bank-brand {
+  display: block;
+
+  &__list {
+    @include reset-list;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  &__item {
+    width: 33.333333%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+  }
+
+  &__block {
+    @include reset-button;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+
+    &:active,
+    &:global(.is-selected) {
+      border-color: $color-navy-50;
+
+      .bank-brand__text {
+        color: $color-navy-50;
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__logo {
+    flex: none;
+    align-self: center;
+    display: block;
+    margin-bottom: 2px;
+
+    svg {
+      display: block;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__text {
+    flex: none;
+    display: block;
+    @include font-size-default(14);
+  }
+
+  &--col {
+    &-2 {
+      .bank-brand {
+        &__item {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

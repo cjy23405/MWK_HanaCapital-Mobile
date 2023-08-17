@@ -1,0 +1,131 @@
+@import '@/assets/scss/components/import/basic-table.scss';
+
+.basic-table {
+  border-top: none;
+
+  > table {
+    > tbody {
+      > tr {
+        &[tabindex='0'],
+        > td[tabindex='0'] {
+          cursor: pointer;
+        }
+
+        &:global(.is-selected) {
+          > td {
+            background-color: rgba($color-navy-50, 0.08);
+          }
+        }
+
+        &:last-child {
+          > td {
+            border-bottom: none;
+          }
+        }
+
+        &:global(.is-disabled) {
+          > td {
+            color: $color-gray-40;
+          }
+
+          &:global(.is-selected) {
+            > td {
+              background-color: $color-gray-05;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.select-table {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-top: 1px solid $color-gray-60;
+  border-bottom: 1px solid $color-gray-30;
+
+  &__caption {
+    @include for-a11y;
+  }
+
+  &__head {
+    flex: none;
+    overflow: hidden;
+  }
+
+  &__body {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+  }
+
+  &__radio {
+    @include reset-button;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-30;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -6px 0 0 -6px;
+    }
+
+    &-text {
+      @include for-a11y;
+    }
+
+    &:global(.is-selected) {
+      border-color: $color-navy-50;
+      background-color: $color-navy-50;
+
+      &::before {
+        background-color: $color-white;
+      }
+    }
+
+    &[disabled] {
+      border-color: $color-gray-30;
+      background-color: $color-gray-20;
+
+      &:global(.is-selected) {
+        &::before {
+          background-color: $color-gray-40;
+        }
+      }
+    }
+  }
+
+  &--disabled {
+    .basic-table {
+      > table {
+        > thead {
+          > tr {
+            > th {
+              color: $color-gray-40;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &--maxrow {
+    &-5 {
+      max-height: 243px;
+    }
+  }
+}

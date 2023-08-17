@@ -1,0 +1,38 @@
+.connection-over {
+  width: 328px;
+  box-sizing: border-box;
+  padding: 30px 20px 40px;
+  border-radius: 20px;
+  background-color: $color-white;
+  text-align: center;
+
+  @include media-mobile-small {
+    width: 320px;
+  }
+
+  &__logo {
+    display: block;
+    margin: 0 auto 16px;
+    width: 104px;
+    height: auto;
+  }
+
+  &__illust {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: 115px;
+    height: 92px;
+    background-position: 50% 50%;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    @include font-size-default(16);
+  }
+
+  &__text {
+    margin: 0;
+    @include font-size-default(14);
+    color: $color-gray-80;
+  }
+}

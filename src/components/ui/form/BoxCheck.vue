@@ -1,0 +1,229 @@
+<script>
+import {
+  ref,
+  computed,
+  useCssModule,
+  provide,
+  reactive,
+  watch,
+  onBeforeMount,
+} from 'vue';
+
+const defaultClassNames = () => ({
+  wrap: '',
+  input: '',
+  block: '',
+  left: '',
+  center: '',
+  right: '',
+});
+
+export default {
+  inheritAttrs: false,
+  props: {
+    classNames: {
+      Type: Object,
+      default() {
+        return defaultClassNames();
+      },
+    },
+    type: {
+      Type: String,
+      default: 'radio',
+    },
+    name: {
+      Type: String,
+      default: null,
+    },
+    id: {
+      Type: String,
+      required: true,
+    },
+    align: {
+      Type: String,
+      default: null,
+    },
+    contents: {
+      Type: Boolean,
+      default: false,
+    },
+    minSide: {
+      Type: Boolean,
+      default: false,
+    },
+    defaultChecked: {
+      Type: Boolean,
+      default: false,
+    },
+    modelValue: {
+      Type: Boolean,
+    },
+    size: {
+      Type: String,
+      default: null,
+    },
+  },
+  setup(props, { emit, slots }) {
+    const eSiblingsChange = new Event('siblingsChange');
+
+    const state = reactive({
+      type: { value: null },
+      id: { value: null },
+      size: { value: null },
+      checked: false,
+    });
+
+    const input = ref(null);
+
+    const customClassNames = computed(() => {
+      const { classNames } = props;
+      return Object.assign(defaultClassNames(), classNames);
+    });
+
+    const isLeft = computed(() => {
+      return Boolean(slots.left);
+    });
+
+    const isRight = computed(() => {
+      return Boolean(slots.right);
+    });
+
+    const getInputElement = () => {
+      return input.value;
+    };
+
+    const onChange = (e) => {
+      const el = e.target;
+      const { checked } = el;
+      const { type, name } = props;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+
+      if (type === 'radio' && name) {
+        const siblingsEl = Array.prototype.filter.call(
+          document.querySelectorAll(`[name="${name}"]`),
+          (item) => {
+            return !(item === el);
+          }
+        );
+
+        siblingsEl.forEach((item) => {
+          item.dispatchEvent(eSiblingsChange);
+        });
+      }
+    };
+
+    const onSiblingsChange = (e) => {
+      const el = e.target;
+      const { checked } = el;
+
+      state.checked = checked;
+      emit('update:modelValue', checked);
+    };
+
+    watch(
+      () => props.type,
+      (cur) => {
+        state.type.value = cur;
+      }
+    );
+
+    watch(
+      () => props.id,
+      (cur) => {
+        state.id.value = cur;
+      }
+    );
+
+    watch(
+      () => props.modelValue,
+      (cur) => {
+        state.checked = cur;
+      }
+    );
+
+    watch(
+      () => props.size,
+      (cur) => {
+        state.size = cur;
+      }
+    );
+
+    onBeforeMount(() => {
+      const { type, id, size, modelValue, defaultChecked } = props;
+
+      state.type.value = type;
+      state.id.value = id;
+      state.size.value = size;
+      state.checked =
+        typeof modelValue === 'boolean' ? modelValue : defaultChecked;
+    });
+
+    provide('boxCheckstyleModule', useCssModule());
+    provide('boxCheckType', state.type);
+    provide('boxCheckId', state.id);
+    provide('boxCheckSize', state.size);
+
+    return {
+      state,
+      input,
+      customClassNames,
+      getInputElement,
+      isLeft,
+      isRight,
+      onChange,
+      onSiblingsChange,
+    };
+  },
+};
+</script>
+
+<template>
+  <div
+    :class="[
+      $style['box-check'],
+      {
+        [$style['box-check--checkbox']]: type === 'checkbox',
+        [$style[`box-check--align-${align}`]]: align,
+        [$style['box-check--contents']]: contents,
+        [$style['box-check--min-side']]: minSide,
+        [$style[`box-check--size-${size}`]]: size,
+      },
+      customClassNames.wrap,
+    ]"
+  >
+    <input
+      ref="input"
+      v-bind="$attrs"
+      :type="type"
+      :class="[$style['box-check__input'], customClassNames.input]"
+      :name="name"
+      :id="id"
+      :checked="state.checked"
+      @change="onChange"
+      @siblingsChange="onSiblingsChange"
+    />
+    <div :class="[$style['box-check__block'], customClassNames.block]">
+      <div
+        v-if="isLeft"
+        :class="[$style['box-check__left'], customClassNames.left]"
+      >
+        <slot name="left" />
+      </div>
+      <div :class="[$style['box-check__center'], customClassNames.center]">
+        <slot />
+      </div>
+      <div
+        v-if="isRight"
+        :class="[$style['box-check__right'], customClassNames.right]"
+      >
+        <slot name="right" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss" module>
+@import '@/assets/scss/components/ui/form/BoxCheck.scss';
+</style>
