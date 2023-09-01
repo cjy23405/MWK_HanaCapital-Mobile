@@ -1,5 +1,6 @@
 @import '@/assets/scss/components/import/icon-list.scss';
 @import '@/assets/scss/components/import/join.scss';
+@import '@/assets/scss/components/import/image-view.scss';
 
 :global(.page-home) {
   background-color: $color-gray-15;
@@ -55,6 +56,23 @@
   height: 24px;
   background: url('@/assets/images/etc/lightning.png') no-repeat 50% 50% / 100%
     100%;
+}
+
+.hot-deal-list {
+  @include reset-list;
+
+  &__item {
+    & + & {
+      margin-top: 24px;
+    }
+  }
+
+  &__block {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    padding-left: 8px;
+  }
 }
 
 .progress {

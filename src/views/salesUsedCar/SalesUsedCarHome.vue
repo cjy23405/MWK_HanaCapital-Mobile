@@ -33,6 +33,10 @@ import FilterButton from '@/components/ui/button/FilterButton.vue';
 import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import TextProgress from '@/components/ui/progress/TextProgress.vue';
+import CheckBox from '@/components/ui/form/CheckBox.vue';
+import CheckBoxObject from '@/components/ui/form/CheckBoxObject.vue';
+import CheckBoxLabelText from '@/components/ui/form/CheckBoxLabelText.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconArrow from '@/assets/images/icon/dropdown.svg?component';
 
@@ -67,6 +71,11 @@ export default {
     RoundStatus,
     TextButton,
     TextProgress,
+    CheckBox,
+    CheckBoxObject,
+    CheckBoxLabelText,
+    BottomSticky,
+
     IconArrow,
   },
   setup() {
@@ -269,6 +278,13 @@ export default {
         v-if="state.filterOpen"
         className="row-margin-container-medium"
       />
+
+      <div class="inline-wrap align-right row-margin-item row-margin-top-none">
+        <CheckBox id="salesUsedCarHomeCheckBox" theme="tertiary">
+          <CheckBoxObject />
+          <CheckBoxLabelText>약정 가능 건</CheckBoxLabelText>
+        </CheckBox>
+      </div>
 
       <UiAccordion>
         <!-- Case : 신용동의 -->
@@ -1386,21 +1402,31 @@ export default {
     </section>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">신규상담</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">차량검색</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton theme="quaternary" size="small">상사검색</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >신규상담</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >차량검색</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton theme="quaternary" size="small"
+                >상사검색</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

@@ -22,6 +22,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconMoney from '@/assets/images/icon/money.svg?component';
 import IconRate from '@/assets/images/icon/rate.svg?component';
@@ -32,6 +33,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -52,6 +54,8 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BottomSticky,
+
     IconMoney,
     IconRate,
     IconDate,
@@ -61,6 +65,7 @@ export default {
     IconContract,
     IconDeposit,
     IconCalculate,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -590,6 +595,14 @@ export default {
       <!-- // 유의사항 -->
     </UiTab>
 
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
+
     <BasicHr
       type="contents"
       theme="quaternary"
@@ -611,15 +624,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>한도조회</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>한도조회</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

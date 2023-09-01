@@ -1,11 +1,36 @@
 <script>
-import { computed } from 'vue';
+import {
+  computed,
+  reactive,
+  onBeforeMount,
+  onUpdated,
+  onMounted,
+  onBeforeUnmount,
+  ref,
+  provide,
+} from 'vue';
 
 const defaultClassNames = () => ({
   wrap: '',
   head: '',
   body: '',
   foot: '',
+});
+
+const isSlot = (slot) => {
+  if (!slot || typeof slot !== 'function') return false;
+
+  const items = slot();
+  let vIfLength = 0;
+
+  items.forEach((item) => item.children === 'v-if' && vIfLength++);
+
+  return items.length !== vIfLength;
+};
+
+const eResize = new Event('resize');
+const resizeObserver = new ResizeObserver((entries) => {
+  entries[0].target.dispatchEvent(eResize);
 });
 
 export default {
@@ -17,21 +42,54 @@ export default {
       },
     },
   },
-  setup(props, context) {
+  setup(props, { slots }) {
+    const state = reactive({
+      wrap: {
+        value: null,
+      },
+      slots: {},
+    });
+
+    const wrap = ref(null);
+
     const customClassNames = computed(() => {
       const { classNames } = props;
       return Object.assign(defaultClassNames(), classNames);
     });
 
     const isHead = computed(() => {
-      return Boolean(context.slots.head);
+      return isSlot(state.slots.head);
     });
 
     const isFoot = computed(() => {
-      return Boolean(context.slots.foot);
+      return isSlot(state.slots.foot);
+    });
+
+    onBeforeMount(() => {
+      state.slots.head = slots.head;
+      state.slots.foot = slots.foot;
+      state.wrap.value = wrap;
+    });
+
+    onMounted(() => {
+      resizeObserver.observe(wrap.value);
+    });
+
+    onUpdated(() => {
+      state.slots.head = slots.head;
+      state.slots.foot = slots.foot;
+    });
+
+    onBeforeUnmount(() => {
+      resizeObserver.unobserve(wrap.value);
+    });
+
+    provide('pageContents', {
+      wrap: state.wrap,
     });
 
     return {
+      wrap,
       customClassNames,
       isHead,
       isFoot,
@@ -41,7 +99,7 @@ export default {
 </script>
 
 <template>
-  <div :class="[$style['page-contents'], customClassNames.wrap]">
+  <div ref="wrap" :class="[$style['page-contents'], customClassNames.wrap]">
     <div
       v-if="isHead"
       :class="[$style['page-contents__head'], customClassNames.head]"

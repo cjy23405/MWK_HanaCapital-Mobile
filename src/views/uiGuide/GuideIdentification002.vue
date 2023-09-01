@@ -18,6 +18,12 @@ import LayerIdentificationCardARS from '@/views/identification/LayerIdentificati
 import LayerIdentificationKakaopayMethodSelect from '@/views/identification/LayerIdentificationKakaopayMethodSelect.vue';
 import LayerIdentificationKakaopayIn from '@/views/identification/LayerIdentificationKakaopayIn.vue';
 import LayerIdentificationKakaopayAgree from '@/views/identification/LayerIdentificationKakaopayAgree.vue';
+import LayerIdentificationKakaopayAddMethodSelect from '@/views/identification/LayerIdentificationKakaopayAddMethodSelect.vue';
+import Common_M00_l050 from '@/views/identification/Common_M00_l050.vue';
+import Common_M00_l051 from '@/views/identification/Common_M00_l051.vue';
+import Common_M00_l052 from '@/views/identification/Common_M00_l052.vue';
+import Common_M00_l053 from '@/views/identification/Common_M00_l053.vue';
+import Common_M00_l054 from '@/views/identification/Common_M00_l054.vue';
 
 export default {
   components: {
@@ -37,6 +43,12 @@ export default {
     LayerIdentificationKakaopayMethodSelect,
     LayerIdentificationKakaopayIn,
     LayerIdentificationKakaopayAgree,
+    LayerIdentificationKakaopayAddMethodSelect,
+    Common_M00_l050,
+    Common_M00_l051,
+    Common_M00_l052,
+    Common_M00_l053,
+    Common_M00_l054,
   },
   setup() {
     const layer001 = ref(null);
@@ -53,6 +65,12 @@ export default {
     const layer012 = ref(null);
     const layer013 = ref(null);
     const layer014 = ref(null);
+    const layer015 = ref(null);
+    const layer016 = ref(null);
+    const layer017 = ref(null);
+    const layer018 = ref(null);
+    const layer019 = ref(null);
+    const layer020 = ref(null);
 
     const layer001Open = (e = {}) => {
       layer001.value.layer.open(e.target);
@@ -96,6 +114,24 @@ export default {
     const layer014Open = (e = {}) => {
       layer014.value.layer.open(e.target);
     };
+    const layer015Open = (e = {}) => {
+      layer015.value.layer.open(e.target);
+    };
+    const layer016Open = (e = {}) => {
+      layer016.value.layer.open(e.target);
+    };
+    const layer017Open = (e = {}) => {
+      layer017.value.layer.open(e.target);
+    };
+    const layer018Open = (e = {}) => {
+      layer018.value.layer.open(e.target);
+    };
+    const layer019Open = (e = {}) => {
+      layer019.value.layer.open(e.target);
+    };
+    const layer020Open = (e = {}) => {
+      layer020.value.layer.open(e.target);
+    };
 
     return {
       layer001,
@@ -112,6 +148,12 @@ export default {
       layer012,
       layer013,
       layer014,
+      layer015,
+      layer016,
+      layer017,
+      layer018,
+      layer019,
+      layer020,
       layer001Open,
       layer002Open,
       layer003Open,
@@ -126,6 +168,12 @@ export default {
       layer012Open,
       layer013Open,
       layer014Open,
+      layer015Open,
+      layer016Open,
+      layer017Open,
+      layer018Open,
+      layer019Open,
+      layer020Open,
     };
   },
 };
@@ -186,7 +234,12 @@ export default {
       </ButtonListItem>
       <ButtonListItem>
         <BasicButton @click="layer014Open">
-          개인 - 간편인증 방법 선택<br />Common_M00_b050
+          개인 - 간편인증 선택 팝업<br />Common_M00_b050
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer015Open">
+          개인 - 간편인증 선택 팝업_추가인증<br />Common_M00_b050
         </BasicButton>
       </ButtonListItem>
       <ButtonListItem>
@@ -197,6 +250,31 @@ export default {
       <ButtonListItem>
         <BasicButton @click="layer012Open">
           개인 - 간편인증수단 인증안내<br />Common_M00_b052
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer016Open">
+          간편인증통합중계 서비스 이용약관<br />Common_M00_l050
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer017Open">
+          개인정보 수집 및 이용·제공 동의<br />Common_M00_l051
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer018Open">
+          제3자 정보제공동의<br />Common_M00_l052
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer019Open">
+          개인정보 취급 위탁 동의 - 카카오<br />Common_M00_l053
+        </BasicButton>
+      </ButtonListItem>
+      <ButtonListItem>
+        <BasicButton @click="layer020Open">
+          개인정보 취급 위탁 동의 - 토스<br />Common_M00_l054
         </BasicButton>
       </ButtonListItem>
     </ButtonList>
@@ -213,5 +291,11 @@ export default {
     <LayerIdentificationKakaopayIn ref="layer012" />
     <LayerIdentificationKakaopayAgree ref="layer013" />
     <LayerIdentificationKakaopayMethodSelect ref="layer014" />
+    <LayerIdentificationKakaopayAddMethodSelect ref="layer015" />
+    <Common_M00_l050 ref="layer016" />
+    <Common_M00_l051 ref="layer017" />
+    <Common_M00_l052 ref="layer018" />
+    <Common_M00_l053 ref="layer019" />
+    <Common_M00_l054 ref="layer020" />
   </PageContents>
 </template>

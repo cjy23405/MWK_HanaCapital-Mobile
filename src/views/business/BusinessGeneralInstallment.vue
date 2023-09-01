@@ -22,6 +22,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconDate from '@/assets/images/icon/date.svg?component';
 import IconContract from '@/assets/images/icon/contract.svg?component';
@@ -31,6 +32,7 @@ import IconConsulting from '@/assets/images/icon/consulting.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconInstallation from '@/assets/images/icon/installation.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -51,6 +53,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BottomSticky,
 
     IconDate,
     IconSend,
@@ -60,6 +63,7 @@ export default {
     IconDeposit,
     IconInstallation,
     IconRate,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -842,6 +846,14 @@ export default {
       </ul>
     </UiTab>
 
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
+
     <BasicHr
       type="contents"
       theme="quaternary"
@@ -863,15 +875,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>상품보기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>상품보기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

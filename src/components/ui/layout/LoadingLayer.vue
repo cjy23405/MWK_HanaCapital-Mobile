@@ -1,6 +1,14 @@
 <script>
 // Common_M00_p001
-import { reactive, computed, watch, nextTick } from 'vue';
+import {
+  reactive,
+  computed,
+  watch,
+  nextTick,
+  ref,
+  onMounted,
+  onBeforeUnmount,
+} from 'vue';
 
 import { useUiLoadingStore } from '@/stores/ui/loading';
 
@@ -30,6 +38,8 @@ export default {
       display: 'none',
       show: false,
     });
+
+    const loading = ref(null);
 
     const customClassNames = computed(() => {
       const { classNames } = props;
@@ -71,8 +81,24 @@ export default {
       });
     };
 
+    onMounted(() => {
+      const body = document.getElementsByTagName('body')[0];
+
+      if (!loading.value.parentNode.matches('body')) {
+        body.append(loading.value);
+      }
+
+      store.ui.loading.setElement(loading.value);
+    });
+
+    onBeforeUnmount(() => {
+      loading.value.remove();
+      store.ui.loading.setElement();
+    });
+
     return {
       state,
+      loading,
       customClassNames,
     };
   },
@@ -81,6 +107,7 @@ export default {
 
 <template>
   <div
+    ref="loading"
     :class="[
       $style['loading'],
       {

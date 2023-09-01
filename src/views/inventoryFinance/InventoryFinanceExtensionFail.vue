@@ -13,6 +13,7 @@ import BasicHr from '@/components/ui/common/BasicHr.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconCustomer from '@/assets/images/icon/customer-center.svg?component';
 import IconTell from '@/assets/images/icon/tell.svg?component';
@@ -28,6 +29,8 @@ export default {
     ButtonList,
     ButtonListItem,
     BasicButton,
+    BottomSticky,
+
     IconCustomer,
     IconTell,
   },
@@ -78,7 +81,7 @@ export default {
             <div :class="$style['icon-list__icon']"><IconCustomer /></div>
             <div :class="$style['icon-list__content']">
               <div :class="$style['icon-list__title']">고객센터</div>
-              <div :class="$style['icon-list__text']">평일 09:00 ~ 19:00</div>
+              <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
             </div>
             <BasicButton
               tagName="a"
@@ -99,15 +102,19 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>확인</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>확인</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

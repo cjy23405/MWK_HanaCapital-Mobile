@@ -31,6 +31,7 @@ import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconLink from '@/assets/images/icon/link.svg?component';
 import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
@@ -64,6 +65,8 @@ export default {
     UnitText,
     BasicInput,
     CarThumb,
+    BottomSticky,
+
     IconLink,
     IconCheckDocument,
   },
@@ -402,7 +405,7 @@ export default {
                   />
                 </InputBlockCell>
                 <template v-slot:right>
-                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
+                  <BasicButton size="mini" theme="quaternary">조회</BasicButton>
                 </template>
               </InputBlock>
               <FormInvalidMessage>
@@ -1051,18 +1054,22 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :line="true" theme="quaternary">취소</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>다음</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton :line="true" theme="quaternary">취소</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>다음</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

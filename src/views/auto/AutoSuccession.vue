@@ -24,6 +24,7 @@ import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconPerson from '@/assets/images/icon/person.svg?component';
@@ -36,6 +37,7 @@ import IconCalculate from '@/assets/images/icon/calculate.svg?component';
 import IconDocumentComplete from '@/assets/images/icon/document-complete.svg?component';
 import IconTakingOver from '@/assets/images/icon/taking-over.svg?component';
 import IconAssignment from '@/assets/images/icon/assignment.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 import ImgAutoLease from '@/assets/images/illustration/img-auto-lease.svg?component';
 import ImgAutoRent from '@/assets/images/illustration/img-auto-rent.svg?component';
 
@@ -60,6 +62,7 @@ export default {
     NavTabButton,
     NoticeText,
     TextButton,
+    BottomSticky,
 
     IconDeposit,
     IconSend,
@@ -72,6 +75,7 @@ export default {
     IconTakingOver,
     IconAssignment,
     IconPerson,
+    IconLogoMain,
     ImgAutoLease,
     ImgAutoRent,
   },
@@ -1515,6 +1519,14 @@ export default {
       </ul>
     </UiTab>
 
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
+
     <BasicHr
       type="contents"
       theme="quaternary"
@@ -1545,18 +1557,22 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton theme="tertiary">양도인 신청</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton>양수인 신청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton theme="tertiary">양도인 신청</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>양수인 신청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

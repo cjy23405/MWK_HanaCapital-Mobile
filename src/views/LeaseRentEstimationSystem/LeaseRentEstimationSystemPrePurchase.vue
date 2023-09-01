@@ -52,6 +52,7 @@ import UnitText from '@/components/ui/text/UnitText.vue';
 import SwitchCheckBox from '@/components/ui/form/SwitchCheckBox.vue';
 import DeleteButton from '@/components/ui/button/DeleteButton.vue';
 import DocumentView from '@/components/ui/viewer/DocumentView.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import DocumentEstimate001Contents from '@/views/document/DocumentEstimate001Contents.vue';
 
@@ -108,7 +109,10 @@ export default {
     SwitchCheckBox,
     DeleteButton,
     DocumentView,
+    BottomSticky,
+
     DocumentEstimate001Contents,
+
     IconScroll,
   },
   setup() {
@@ -3450,6 +3454,10 @@ export default {
                       </FormInvalid>
                     </FormListItem>
                   </FormList>
+
+                  <NoticeText :classNames="{ wrap: 'row-margin-item-group' }"
+                    >품목, 금액 모두 입력해주세요.</NoticeText
+                  >
                 </section>
               </UiAccordionLayer>
             </UiAccordionItem>
@@ -3547,8 +3555,8 @@ export default {
                           <div class="text-body-4">수수료</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3665,8 +3673,8 @@ export default {
                           <div class="text-body-4">기타</div>
                         </KeyValueTitle>
                         <KeyValueText>
-                          CM : 0.003% (690,000원)<br />
-                          AG : 0.000% (000,000원)
+                          CM : 690,000원 (0.003%)<br />
+                          AG : 000,000원 (0.000%)
                         </KeyValueText>
                       </KeyValueItem>
                     </KeyValue>
@@ -3841,7 +3849,7 @@ export default {
       <section class="row-margin-container-medium">
         <div class="flex-box row-margin-contents">
           <div class="flex-box__cell flex-1">
-            <h2 class="text-title-2">상품 선택</h2>
+            <h2 class="text-title-2">견적 선택</h2>
           </div>
           <div class="flex-box__cell">
             <IconScroll class="display-block" />
@@ -3881,7 +3889,7 @@ export default {
                   <div class="flex-box">
                     <div class="flex-box__cell flex-1">
                       <h3 :class="$style['estimate-list__title']">
-                        {{ i }}번 상품
+                        {{ i }}번 견적
                       </h3>
                     </div>
                     <div class="flex-box__cell">
@@ -5369,14 +5377,19 @@ export default {
                         월 납입금
                       </KeyValueTitle>
                       <KeyValueText>
-                        <BasicButton size="mini" inline="true"
+                        <BasicButton size="small" inline="true"
                           >계산하기</BasicButton
                         >
                         <!-- Case : 계산중 -->
-                        <BasicButton size="mini" inline="true">
+                        <BasicButton size="small" inline="true">
                           계산중
                           <template v-slot:rightIcon>
-                            <div :class="$style['loading-icon']"></div>
+                            <div
+                              :class="[
+                                $style['loading-icon'],
+                                $style['loading-icon--regular'],
+                              ]"
+                            ></div>
                           </template>
                         </BasicButton>
                         <!-- // Case : 계산중 -->
@@ -5410,16 +5423,24 @@ export default {
         <!-- // Case : 차량 선택 후 -->
       </section>
 
-      <ButtonList
+      <BottomSticky
         v-if="!state.viewDocument"
         :classNames="{
-          wrap: 'row-margin-contents',
+          wrap: 'row-margin-contents row-margin-top-none',
         }"
       >
-        <ButtonListItem>
-          <BasicButton @click="viewDocumentOpen">견적서 보기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+        <div class="inner-bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton @click="viewDocumentOpen">견적서 보기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
 
       <div v-if="state.viewDocument" class="row-margin-contents">
         <CheckBox
@@ -5500,161 +5521,171 @@ export default {
     </div>
 
     <template v-slot:foot>
-      <!-- Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">견적 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
+      <BottomSticky v-if="state.viewDocument">
+        <div class="bottom-wrap">
+          <!-- Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true">견적 저장</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true"
+                >견적확정</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 가견적 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">재견적 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
+          <!-- Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true">재견적 저장</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true"
+                >견적확정</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 견적확정 or 동의완료 상태에서 재견적 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">조건변경 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
+          <!-- Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true">조건변경 저장</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 심사신청 상태에서 조건변경 && 견적서 보기 선택 후, 디폴트 상태 -->
 
-      <!-- Case : 견적 저장 된 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
+          <!-- Case : 견적 저장 된 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">견적확정</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 견적 저장 된 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">견적확정</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 견적 저장 된 상태 -->
 
-      <!-- Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
+          <!-- Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 심사신청 상태에서 조건변경 && 견적 저장 된 상태 -->
 
-      <!-- Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true">새로 저장</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary" :disabled="true"
-            >견적서 발송</BasicButton
+          <!-- Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">견적확정</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true">새로 저장</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary" :disabled="true"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true"
+                >견적확정</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 견적서 저장 후, 견적서 설정 값 변경의 경우 -->
 
-      <!-- Case : 견적 확정된 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
+          <!-- Case : 견적 확정된 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true">신용조회요청</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 견적 확정된 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true">신용조회요청</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 견적 확정된 상태 -->
 
-      <!-- Case : 확정된 상태 -->
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" theme="tertiary"
-            >견적서 발송</BasicButton
+          <!-- Case : 확정된 상태 -->
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
           >
-        </ButtonListItem>
-        <ButtonListItem>
-          <BasicButton :minSide="true" :disabled="true"
-            >동의 요청됨</BasicButton
-          >
-        </ButtonListItem>
-      </ButtonList>
-      <!-- // Case : 확정된 상태 -->
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true">저장됨</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" theme="tertiary"
+                >견적서 발송</BasicButton
+              >
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton :minSide="true" :disabled="true"
+                >동의 요청됨</BasicButton
+              >
+            </ButtonListItem>
+          </ButtonList>
+          <!-- // Case : 확정된 상태 -->
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

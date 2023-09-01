@@ -416,7 +416,12 @@ export default {
 
             <PopupText>// contents</PopupText>
 
-            <BasicButton @click="layerOpenTest002">
+            <BasicButton
+              @click="
+                layerSlotProps.close();
+                layerOpenTest002();
+              "
+            >
               하단 레이어 팝업
             </BasicButton>
 
@@ -1271,6 +1276,23 @@ export default {
           "
         >
           <div :class="$style['loading-icon']"></div>
+        </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sun-title">regular</h3>
+
+        <div
+          style="
+            display: inline-block;
+            padding: 20px;
+            background-color: #bdbdbd;
+            box-sizing: border-box;
+          "
+        >
+          <div
+            :class="[$style['loading-icon'], $style['loading-icon--regular']]"
+          ></div>
         </div>
       </div>
     </section>
@@ -2741,6 +2763,7 @@ export default {
             titleText="인증번호"
             titleOptionalText="(6자리)"
             target="#testInput003"
+            :forceFocus="true"
           >
             <FormInvalid :error="state.testError001">
               <InputBlock :error="state.testError001">
@@ -2750,6 +2773,7 @@ export default {
                     pattern="\d*"
                     title="인증번호 (6자리)"
                     id="testInput003"
+                    placeholder="인증번호를 입력해 주세요"
                   />
                 </InputBlockCell>
                 <template v-slot:innerRight>
@@ -2835,6 +2859,7 @@ export default {
                     pattern="\d*"
                     title="주민등록번호 뒤 7자리 중 첫번째자리"
                     :afterDot="6"
+                    placeholder="◌"
                   />
                 </InputBlockCell>
               </InputBlock>
@@ -3682,6 +3707,155 @@ export default {
             defaultValue="1"
           />
         </div>
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Placeholder</h3>
+
+        <FormList>
+          <FormListItem titleText="title text" target="#testInput016">
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="title"
+                    id="testInput016"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :selectOnly="true"
+            target="#testInput017"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'Option 001',
+                      },
+                      {
+                        value: '2',
+                        text: 'Option 002',
+                      },
+                      {
+                        value: '3',
+                        text: 'Option 003',
+                      },
+                      {
+                        value: '4',
+                        text: 'Option 004',
+                      },
+                      {
+                        value: '5',
+                        text: 'Option 005',
+                      },
+                      {
+                        value: '6',
+                        text: 'Option 006',
+                      },
+                      {
+                        value: '7',
+                        text: 'Option 007',
+                      },
+                      {
+                        value: '8',
+                        text: 'Option 008',
+                      },
+                    ]"
+                    buttonTitle="OOO 선택하기"
+                    layerTitle="OOO를 선택해 주세요"
+                    buttonId="testInput017"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :forceFocus="true"
+            target="#testInput018"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicInput
+                    title="title"
+                    id="testInput018"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+
+          <FormListItem
+            titleText="title text"
+            :forceFocus="true"
+            :selectOnly="true"
+            target="#testInput019"
+          >
+            <FormInvalid :error="state.testError001">
+              <InputBlock :error="state.testError001">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: 'Option 001',
+                      },
+                      {
+                        value: '2',
+                        text: 'Option 002',
+                      },
+                      {
+                        value: '3',
+                        text: 'Option 003',
+                      },
+                      {
+                        value: '4',
+                        text: 'Option 004',
+                      },
+                      {
+                        value: '5',
+                        text: 'Option 005',
+                      },
+                      {
+                        value: '6',
+                        text: 'Option 006',
+                      },
+                      {
+                        value: '7',
+                        text: 'Option 007',
+                      },
+                      {
+                        value: '8',
+                        text: 'Option 008',
+                      },
+                    ]"
+                    buttonTitle="OOO 선택하기"
+                    layerTitle="OOO를 선택해 주세요"
+                    buttonId="testInput019"
+                    placeholder="placeholder"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+        </FormList>
       </div>
     </section>
 
@@ -8780,6 +8954,19 @@ export default {
       </div>
 
       <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: small</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="small" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="small" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarThumb size="small" src="/images/_dummy/car-thumb.png" />
+      </div>
+
+      <div class="test-section-sub">
         <h3 class="test-section-sub-title">size: medium</h3>
         <!-- Case : 이미지 없을 때 -->
         <CarThumb size="medium" src="" />
@@ -8790,6 +8977,19 @@ export default {
         <!-- // Case : 이미지 에러 -->
 
         <CarThumb size="medium" src="/images/_dummy/car-thumb.png" />
+      </div>
+
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">size: large</h3>
+        <!-- Case : 이미지 없을 때 -->
+        <CarThumb size="large" src="" />
+        <!-- // Case : 이미지 없을 때 -->
+
+        <!-- Case : 이미지 에러 -->
+        <CarThumb size="large" src="/images/_dummy/.png" />
+        <!-- // Case : 이미지 에러 -->
+
+        <CarThumb size="large" src="/images/_dummy/car-thumb.png" />
       </div>
     </section>
 
@@ -9713,7 +9913,7 @@ export default {
                 </div>
               </SlideBannerBlock>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
@@ -9742,7 +9942,8 @@ export default {
       <h2 class="test-section-title">SlideImageBanner</h2>
       <div class="test-section-sub">
         <h3 class="test-section-sub-title">Default</h3>
-        <SlideImageBanner :classNames="{ wrap: 'row-margin-contents' }">
+
+        <SlideImageBanner>
           <Swiper :modules="modules" pagination>
             <!-- Case : 링크 기능 없을 때 -->
             <SwiperSlide>
@@ -9766,7 +9967,7 @@ export default {
                 </div>
               </RouterLink>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>
@@ -9774,6 +9975,50 @@ export default {
                 <div :class="$style['image-view']">
                   <img
                     :src="`${BASE_URL}images/_dummy/banner-002.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </a>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (a tag) -->
+          </Swiper>
+        </SlideImageBanner>
+      </div>
+      <div class="test-section-sub">
+        <h3 class="test-section-sub-title">Secondary</h3>
+
+        <SlideImageBanner theme="secondary">
+          <Swiper :modules="modules" pagination>
+            <!-- Case : 링크 기능 없을 때 -->
+            <SwiperSlide>
+              <div :class="$style['image-view']">
+                <img
+                  :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                  alt="배너 설명 넣어주세요"
+                />
+              </div>
+            </SwiperSlide>
+            <!-- //Case : 링크 기능 없을 때 -->
+
+            <!-- Case : 링크 기능 있을 때 (RouterLink) -->
+            <SwiperSlide>
+              <RouterLink to="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
+                    alt="배너 설명 넣어주세요"
+                  />
+                </div>
+              </RouterLink>
+            </SwiperSlide>
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
+
+            <!-- Case : 링크 기능 있을 때 (a tag) -->
+            <SwiperSlide>
+              <a href="" class="link-block">
+                <div :class="$style['image-view']">
+                  <img
+                    :src="`${BASE_URL}images/_dummy/banner-004.png`"
                     alt="배너 설명 넣어주세요"
                   />
                 </div>
@@ -9823,7 +10068,7 @@ export default {
                 </h3>
               </BasicBanner>
             </SwiperSlide>
-            <!-- // Case : 링크 기능 있을 때 -->
+            <!-- // Case : 링크 기능 있을 때 (RouterLink) -->
 
             <!-- Case : 링크 기능 있을 때 (a tag) -->
             <SwiperSlide>

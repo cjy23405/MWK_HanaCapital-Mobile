@@ -22,6 +22,7 @@ import UiTab from '@/components/ui/tab/UiTab.vue';
 import UiTabPanel from '@/components/ui/tab/UiTabPanel.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 import IconDeposit from '@/assets/images/icon/deposit.svg?component';
 import IconDate from '@/assets/images/icon/date.svg?component';
@@ -30,6 +31,7 @@ import IconSend from '@/assets/images/icon/send.svg?component';
 import IconPersonalTerms from '@/assets/images/icon/personal-terms.svg?component';
 import IconConsultation from '@/assets/images/icon/consultation.svg?component';
 import IconCalculate from '@/assets/images/icon/calculate.svg?component';
+import IconLogoMain from '@/assets/images/icon/logo-main.svg?component';
 
 export default {
   components: {
@@ -50,6 +52,7 @@ export default {
     UiTabPanel,
     NavTab,
     NavTabButton,
+    BottomSticky,
 
     IconDeposit,
     IconDate,
@@ -58,6 +61,7 @@ export default {
     IconSearchMoney,
     IconPersonalTerms,
     IconConsultation,
+    IconLogoMain,
   },
   setup() {
     const store = {
@@ -502,6 +506,14 @@ export default {
       </ul>
     </UiTab>
 
+    <div
+      class="flex-box justify-conten-end row-margin-contents row-margin-bottom-none"
+    >
+      <div class="flex-box__cell">
+        <IconLogoMain class="display-block" />
+      </div>
+    </div>
+
     <BasicHr
       type="contents"
       theme="quaternary"
@@ -531,15 +543,19 @@ export default {
       </ul>
     </div>
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>예상견적서 산출</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>예상견적서 산출</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>

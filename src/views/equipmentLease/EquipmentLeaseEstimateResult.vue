@@ -18,10 +18,12 @@ import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import NavTab from '@/components/ui/tab/NavTab.vue';
 import NavTabButton from '@/components/ui/tab/NavTabButton.vue';
+import BasicHr from '@/components/ui/common/BasicHr.vue';
 import StickyBar from '@/components/ui/common/StickyBar.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
+import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
 export default {
   components: {
@@ -39,10 +41,12 @@ export default {
     BasicBox,
     NavTab,
     NavTabButton,
+    BasicHr,
     StickyBar,
     BasicBoxHead,
     BasicBoxHeadLeft,
     TextButton,
+    BottomSticky,
   },
   setup() {
     const store = {
@@ -202,62 +206,66 @@ export default {
           </KeyValueText>
         </KeyValueItem>
       </KeyValue>
+
+      <BasicHr
+        theme="quaternary"
+        type="contents"
+        className="row-margin-contents-small"
+      />
+
+      <KeyValue margin="regular">
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>견적번호</KeyValueTitle>
+          <KeyValueText>A00000000001</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>영업사원</KeyValueTitle>
+          <KeyValueText>이두리</KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>연락처</KeyValueTitle>
+          <KeyValueText>
+            M 010-1234-5678<br />
+            T 02-1234-5678
+          </KeyValueText>
+        </KeyValueItem>
+        <KeyValueItem
+          :classNames="{
+            item: 'text-body-3',
+          }"
+        >
+          <KeyValueTitle>Fax</KeyValueTitle>
+          <KeyValueText>02-2037-3211</KeyValueText>
+        </KeyValueItem>
+      </KeyValue>
     </BasicBox>
 
-    <section class="row-margin-container-medium">
-      <h3 class="text-title-2 row-margin-contents">견적정보</h3>
-
-      <BasicBox>
-        <KeyValue margin="regular">
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>견적번호</KeyValueTitle>
-            <KeyValueText>A00000000001</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>영업사원</KeyValueTitle>
-            <KeyValueText>이두리</KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>연락처</KeyValueTitle>
-            <KeyValueText>
-              M 010-1234-5678<br />
-              T 02-1234-5678
-            </KeyValueText>
-          </KeyValueItem>
-          <KeyValueItem
-            :classNames="{
-              item: 'text-body-3',
-            }"
-          >
-            <KeyValueTitle>Fax</KeyValueTitle>
-            <KeyValueText>02-2037-3211</KeyValueText>
-          </KeyValueItem>
-        </KeyValue>
-      </BasicBox>
-    </section>
-
     <template v-slot:foot>
-      <ButtonList
-        :classNames="{
-          wrap: 'row-margin-none',
-        }"
-      >
-        <ButtonListItem>
-          <BasicButton>견적 전송하기</BasicButton>
-        </ButtonListItem>
-      </ButtonList>
+      <BottomSticky>
+        <div class="bottom-wrap">
+          <ButtonList
+            :classNames="{
+              wrap: 'row-margin-none',
+            }"
+          >
+            <ButtonListItem>
+              <BasicButton>견적 전송하기</BasicButton>
+            </ButtonListItem>
+          </ButtonList>
+        </div>
+      </BottomSticky>
     </template>
   </PageContents>
 </template>
