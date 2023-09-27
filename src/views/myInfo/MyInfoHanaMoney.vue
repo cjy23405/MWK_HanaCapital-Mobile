@@ -47,7 +47,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         김하나님의<br />
-        <strong>하나머니 내역을 알려드릴게요</strong>
+        하나머니 내역을 알려드릴게요
       </PageMainText>
     </PageTextGroup>
 

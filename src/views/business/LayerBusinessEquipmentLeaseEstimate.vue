@@ -95,7 +95,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>원하시는 이용조건을</strong><br />
+          원하시는 이용조건을<br />
           입력해 주세요
         </PageMainText>
       </PageTextGroup>

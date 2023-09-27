@@ -62,7 +62,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           한도조회를 위해<br />
-          <strong>동의해 주세요</strong>
+          동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

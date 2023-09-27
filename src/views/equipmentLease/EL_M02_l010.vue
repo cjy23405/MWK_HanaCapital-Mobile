@@ -59,7 +59,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           물건점검이<br />
-          <strong>완료되었습니다</strong>
+          완료되었습니다
         </PageMainText>
         <PageSubText>하나캐피탈을 이용해 주셔서 감사합니다.</PageSubText>
       </PageTextGroup>

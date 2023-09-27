@@ -101,7 +101,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           저렴한 금리,<br />
-          <strong>간편한 이용</strong>
+          간편한 이용
         </PageMainText>
       </PageTextGroup>
 

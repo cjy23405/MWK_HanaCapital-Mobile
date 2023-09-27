@@ -73,7 +73,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         상담이<br />
-        <strong>불가능한 고객입니다</strong>
+        불가능한 고객입니다
       </PageMainText>
       <PageSubText>자세한 사항은 지점에 문의하시기 바랍니다.</PageSubText>
     </PageTextGroup>

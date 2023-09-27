@@ -63,7 +63,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           온라인약정이<br />
-          <strong>완료되었습니다</strong>
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           대출금 송금을 위한 출금동의 및 대출계약 사항 안내를<br />

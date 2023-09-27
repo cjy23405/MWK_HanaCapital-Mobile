@@ -24,7 +24,7 @@ import BankSelect from '@/components/ui/form/BankSelect.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 
-import IconLogo from '@/assets/images/icon/hanacapital-small.svg?component';
+import IconHanaGrayBox from '@/assets/images/icon/hana-graybox.svg?component';
 import IconLink from '@/assets/images/icon/link.svg?component';
 
 export default {
@@ -51,7 +51,7 @@ export default {
     NoticeText,
     TextButton,
 
-    IconLogo,
+    IconHanaGrayBox,
     IconLink,
   },
   setup() {
@@ -83,7 +83,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           결제하실 계좌 정보를<br />
-          <strong>입력하세요</strong>
+          입력하세요
         </PageMainText>
         <PageSubText>
           계좌 변경은 공동인증서 인증을 통해 변경이 가능합니다.
@@ -179,9 +179,6 @@ export default {
                     id="layerMyInfoDirectDebitAccountEditDomesticAccount"
                   />
                 </InputBlockCell>
-                <template v-slot:right>
-                  <BasicButton size="mini" theme="quaternary">확인</BasicButton>
-                </template>
               </InputBlock>
               <FormInvalidMessage>
                 계좌번호를 다시 확인해 주세요.
@@ -204,7 +201,7 @@ export default {
 
       <div :class="$style['join']">
         <div :class="$style['join__inner']">
-          <div :class="$style['join__icon']"><IconLogo /></div>
+          <div :class="$style['join__icon']"><IconHanaGrayBox /></div>
           <div :class="$style['join__title']">하나은행 계좌가 없으신가요?</div>
           <TextButton
             :block="true"

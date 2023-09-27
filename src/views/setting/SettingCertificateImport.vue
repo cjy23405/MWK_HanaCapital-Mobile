@@ -73,7 +73,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         PC에 저장된 공동인증서를<br />
-        <strong>스마트폰으로 복사합니다</strong>
+        스마트폰으로 복사합니다
       </PageMainText>
     </PageTextGroup>
 

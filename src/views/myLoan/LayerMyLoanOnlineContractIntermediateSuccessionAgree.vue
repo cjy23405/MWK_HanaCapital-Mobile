@@ -64,7 +64,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           아현 푸르지오 클라시티 V1에 대하여<br />
-          <strong>승계를 신청하시겠습니까?</strong>
+          승계를 신청하시겠습니까?
         </PageMainText>
       </PageTextGroup>
 

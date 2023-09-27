@@ -89,7 +89,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>계약자 정보를</strong><br />
+          계약자 정보를<br />
           입력해 주세요
         </PageMainText>
       </PageTextGroup>

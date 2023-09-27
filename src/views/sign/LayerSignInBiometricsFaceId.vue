@@ -41,7 +41,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           Face ID를 <br />
-          <strong>인식시켜 주세요</strong>
+          인식시켜 주세요
         </PageMainText>
       </PageTextGroup>
 

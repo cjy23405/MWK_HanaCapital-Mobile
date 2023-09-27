@@ -15,6 +15,7 @@ import FormList from '@/components/ui/form/FormList.vue';
 import FormListItem from '@/components/ui/form/FormListItem.vue';
 import FormInvalid from '@/components/ui/form/FormInvalid.vue';
 import FormInvalidMessage from '@/components/ui/form/FormInvalidMessage.vue';
+import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicButton from '@/components/ui/button/BasicButton.vue';
 import ButtonList from '@/components/ui/button/ButtonList.vue';
 import ButtonListItem from '@/components/ui/button/ButtonListItem.vue';
@@ -46,6 +47,7 @@ export default {
     FormListItem,
     FormInvalid,
     FormInvalidMessage,
+    FormHelpText,
     BasicButton,
     ButtonList,
     ButtonListItem,
@@ -94,7 +96,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           카드번호를<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -296,6 +298,7 @@ export default {
               </InputBlockCell>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
+            <FormHelpText>본인명의의 휴대폰만 가능합니다.</FormHelpText>
           </FormInvalid>
         </FormListItem>
 
@@ -322,7 +325,7 @@ export default {
                   title="주민등록번호 뒤 7자리 중 첫번째자리"
                   id="layerIdentificationCardIdNumber02"
                   :afterDot="6"
-                  placeholder="◌"
+                  :placeholderDot="true"
                 />
               </InputBlockCell>
             </InputBlock>

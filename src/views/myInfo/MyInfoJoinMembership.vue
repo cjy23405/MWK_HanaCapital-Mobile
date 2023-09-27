@@ -105,7 +105,7 @@ export default {
           <PageMainText>
             ‘교통상해사망/교통상해후유장해보험’<br />
             서비스를 하나캐피탈 멤버십 회원에게는<br />
-            <strong>무료 제공하는 서비스</strong>
+            무료 제공하는 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -308,7 +308,7 @@ export default {
           <PageMainText>
             하나캐피탈 멤버십 회원이<br />
             신용대출 상품 이용 시<br />
-            <strong>금리 우대를 제공하는 혜택 서비스</strong>
+            금리 우대를 제공하는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -792,7 +792,7 @@ export default {
         <PageTextGroup>
           <PageMainText>
             하나캐피탈 제휴처 렌탈 시<br />
-            <strong>렌탈료 할인을 제공하는 혜택 서비스</strong>
+            렌탈료 할인을 제공하는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -905,7 +905,7 @@ export default {
           </div>
           <PageMainText>
             매주 업데이트되는 부동산 시세 조회를<br />
-            <strong>무료로 이용할 수 있는 혜택 서비스</strong>
+            무료로 이용할 수 있는 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 
@@ -1016,7 +1016,7 @@ export default {
           </div>
           <PageMainText>
             매월 업데이트되는 차량정보로<br />
-            <strong>내 차 시세조회가 가능한 혜택 서비스</strong>
+            내 차 시세조회가 가능한 혜택 서비스
           </PageMainText>
         </PageTextGroup>
 

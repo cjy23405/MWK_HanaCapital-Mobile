@@ -15,7 +15,6 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -35,7 +34,6 @@ import BoxCheckList from '@/components/ui/form/BoxCheckList.vue';
 import BoxCheckListItem from '@/components/ui/form/BoxCheckListItem.vue';
 import NoticeText from '@/components/ui/text/NoticeText.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -52,7 +50,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -72,7 +69,6 @@ export default {
     BoxCheckListItem,
     NoticeText,
     CarEmblem,
-    CarThumb,
   },
   setup() {
     const state = reactive({
@@ -105,7 +101,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           한도 조회를 위해<br />
-          <strong>신청정보를 입력해 주세요</strong>
+          신청정보를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -124,9 +120,6 @@ export default {
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h3>
           </BasicBoxHeadLeft>
-          <BasicBoxHeadRight>
-            <CarThumb src="/images/_dummy/car-thumb.png" />
-          </BasicBoxHeadRight>
         </BasicBoxHead>
         <KeyValue verticalAlign="center">
           <KeyValueItem
@@ -218,7 +211,7 @@ export default {
         </FormListItem>
 
         <FormListItem titleText="대출기간" :forceFocus="true">
-          <BoxCheckList>
+          <BoxCheckList :wrap="true" :col="3">
             <BoxCheckListItem>
               <BoxCheck
                 :minSide="true"
@@ -256,6 +249,39 @@ export default {
                 <BoxCheckLabel>60개월</BoxCheckLabel>
               </BoxCheck>
             </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriod"
+                id="layerAutoUsedLoanFormPeriod005"
+              >
+                <BoxCheckLabel>72개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+
+            <!-- DD : disabled 예제 -->
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriodDisabled"
+                id="layerAutoUsedLoanFormPeriodDisabled001"
+                :defaultChecked="true"
+                :disabled="true"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <BoxCheckListItem>
+              <BoxCheck
+                :minSide="true"
+                name="layerAutoUsedLoanFormPeriodDisabled"
+                id="layerAutoUsedLoanFormPeriodDisabled002"
+                :disabled="true"
+              >
+                <BoxCheckLabel>24개월</BoxCheckLabel>
+              </BoxCheck>
+            </BoxCheckListItem>
+            <!-- // DD : disabled 예제 -->
           </BoxCheckList>
         </FormListItem>
       </FormList>

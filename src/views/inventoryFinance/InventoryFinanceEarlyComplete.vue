@@ -61,7 +61,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         중도상환 신청 접수가<br />
-        <strong>완료되었습니다</strong>
+        완료되었습니다
       </PageMainText>
       <PageSubText>
         고객님 감사합니다.<br />

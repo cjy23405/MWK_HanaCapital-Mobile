@@ -61,7 +61,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>할부 조건을</strong><br />
+          할부 조건을<br />
           확인해 주세요
         </PageMainText>
       </PageTextGroup>

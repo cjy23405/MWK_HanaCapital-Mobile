@@ -51,7 +51,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         스마트폰에 저장된 공동인증서를<br />
-        <strong>PC로 복사합니다</strong>
+        PC로 복사합니다
       </PageMainText>
     </PageTextGroup>
 

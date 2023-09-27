@@ -53,7 +53,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           민원ㆍ상담이 빈번하여<br />
-          <strong>숙지가 필요해요</strong>
+          숙지가 필요해요
         </PageMainText>
       </PageTextGroup>
 

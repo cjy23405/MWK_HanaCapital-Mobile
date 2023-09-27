@@ -63,7 +63,7 @@ export default {
         </p>
         <PageMainText>
           상품설명서 약관에<br />
-          <strong>동의해주세요</strong>
+          동의해주세요
         </PageMainText>
         <PageSubText>
           <strong
@@ -542,19 +542,19 @@ export default {
               <tbody>
                 <tr>
                   <th>상품명</th>
-                  <td>운용리스</td>
+                  <td class="align-left">운용리스</td>
                 </tr>
                 <tr>
                   <th>보증금</th>
-                  <td class="align-right">0 원</td>
+                  <td class="align-left">0 원</td>
                 </tr>
                 <tr>
                   <th>리스기간</th>
-                  <td>취급 후 36개월</td>
+                  <td class="align-left">취급 후 36개월</td>
                 </tr>
                 <tr>
                   <th>선납금/선납리스료</th>
-                  <td class="align-right">0 원</td>
+                  <td class="align-left">0 원</td>
                 </tr>
                 <tr>
                   <th>리스료</th>

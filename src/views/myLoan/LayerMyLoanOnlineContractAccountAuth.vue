@@ -73,7 +73,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님 계좌로<br />
-          <strong>1원을 보냈습니다</strong>
+          1원을 보냈습니다
         </PageMainText>
         <PageSubText>
           해당 계좌의 거래내역에서 입금된 1원의 입금자명을 확인 후
@@ -106,14 +106,6 @@ export default {
                   id="layerMyLoanOnlineContractAccountAuthName"
                 />
               </InputBlockCell>
-              <template v-slot:innerRight>
-                <div :class="$style['input-timer']">5:00</div>
-              </template>
-              <template v-slot:right>
-                <BasicButton size="mini" theme="quaternary">
-                  재요청
-                </BasicButton>
-              </template>
             </InputBlock>
             <FormInvalidMessage>Error Message</FormInvalidMessage>
           </FormInvalid>

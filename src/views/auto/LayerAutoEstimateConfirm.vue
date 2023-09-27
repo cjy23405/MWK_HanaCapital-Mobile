@@ -114,7 +114,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           선택한 자동차로<br />
-          <strong>견적을 확인해볼까요?</strong>
+          견적을 확인해볼까요?
         </PageMainText>
       </PageTextGroup>
 

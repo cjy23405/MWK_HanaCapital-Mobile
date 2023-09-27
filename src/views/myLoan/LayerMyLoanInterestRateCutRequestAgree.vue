@@ -58,7 +58,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           금리인하를 위한 <br />
-          <strong>개인신용정보조회에 동의해 주세요</strong>
+          개인신용정보조회에 동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

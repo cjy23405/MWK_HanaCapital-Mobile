@@ -92,7 +92,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           일반 내구소비재<br />
-          <strong>구입자금 대출</strong>
+          구입자금 대출
         </PageMainText>
       </PageTextGroup>
 

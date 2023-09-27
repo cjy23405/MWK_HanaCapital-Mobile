@@ -62,7 +62,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           연장 신청이<br />
-          <strong>완료되었습니다</strong>
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           재렌트 견적상담을 위해<br />

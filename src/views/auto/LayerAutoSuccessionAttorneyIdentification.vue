@@ -50,7 +50,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           승계 업무 진행을 위해<br />
-          <strong>본인인증을 진행해 주세요</strong>
+          본인인증을 진행해 주세요
         </PageMainText>
       </PageTextGroup>
 

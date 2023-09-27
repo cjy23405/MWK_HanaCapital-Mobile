@@ -63,7 +63,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>계산결과를</strong><br />
+          계산결과를<br />
           알려드릴게요
         </PageMainText>
         <PageSubText>

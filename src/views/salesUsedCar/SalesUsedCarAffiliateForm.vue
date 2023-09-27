@@ -80,7 +80,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         대출금 지급 계좌 정보를<br />
-        <strong>선택해 주세요</strong>
+        선택해 주세요
       </PageMainText>
     </PageTextGroup>
 

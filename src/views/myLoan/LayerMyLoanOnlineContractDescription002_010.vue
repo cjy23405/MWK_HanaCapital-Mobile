@@ -53,7 +53,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           위법계약을<br />
-          <strong>해지할 수 있어요</strong>
+          해지할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

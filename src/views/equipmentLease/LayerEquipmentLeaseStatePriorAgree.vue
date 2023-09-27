@@ -69,7 +69,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           사전동의 요청할<br />
-          <strong>손님 정보를 입력해 주세요</strong>
+          손님 정보를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -70,7 +70,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           아래 내용을 확인하신 후<br />
-          <strong>본인인증을 진행해 주세요</strong>
+          본인인증을 진행해 주세요
         </PageMainText>
       </PageTextGroup>
 

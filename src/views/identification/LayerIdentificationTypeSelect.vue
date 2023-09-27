@@ -46,7 +46,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>회원 유형을</strong><br />
+          회원 유형을<br />
           선택해 주세요
         </PageMainText>
       </PageTextGroup>

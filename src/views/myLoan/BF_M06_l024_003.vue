@@ -62,7 +62,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           온라인약정이<br />
-          <strong>실패되었습니다</strong>
+          실패되었습니다
         </PageMainText>
         <PageSubText> 하나캐피탈을 이용해 주셔서 감사합니다. </PageSubText>
       </PageTextGroup>

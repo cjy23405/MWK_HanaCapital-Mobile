@@ -73,7 +73,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         계약등록 요청이<br />
-        <strong>완료되었습니다</strong>
+        완료되었습니다
       </PageMainText>
       <PageSubText>
         지점에서 계약확정 후 온라인약정 진행 가능합니다.<br />

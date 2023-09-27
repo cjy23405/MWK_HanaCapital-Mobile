@@ -53,7 +53,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           자료열람을<br />
-          <strong>요구할 수 있어요</strong>
+          요구할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

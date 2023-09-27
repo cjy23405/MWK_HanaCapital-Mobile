@@ -56,7 +56,7 @@ export default {
   <PageContents>
     <PageTextGroup>
       <PageMainText>
-        <strong>내 정보를</strong><br />
+        내 정보를<br />
         확인하세요
       </PageMainText>
       <PageSubText>

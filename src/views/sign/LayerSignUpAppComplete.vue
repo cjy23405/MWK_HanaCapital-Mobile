@@ -59,7 +59,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           하나캐피탈 회원이 되신 것을<br />
-          <strong>환영합니다</strong>
+          환영합니다
         </PageMainText>
       </PageTextGroup>
 

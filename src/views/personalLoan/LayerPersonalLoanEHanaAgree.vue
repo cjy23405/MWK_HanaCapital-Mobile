@@ -63,7 +63,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           한도조회를 위해<br />
-          <strong>동의해 주세요</strong>
+          동의해 주세요
         </PageMainText>
         <PageSubText>
           대출상담 및 한도조회를 위한 신용정보조회는<br />

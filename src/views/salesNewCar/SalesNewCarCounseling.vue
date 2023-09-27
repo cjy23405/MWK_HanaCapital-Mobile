@@ -33,9 +33,6 @@ import BasicInput from '@/components/ui/form/BasicInput.vue';
 import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
 
-import IconLink from '@/assets/images/icon/link.svg?component';
-import IconCheckDocument from '@/assets/images/icon/check-document.svg?component';
-
 export default {
   components: {
     PageContents,
@@ -66,9 +63,6 @@ export default {
     BasicInput,
     CarThumb,
     BottomSticky,
-
-    IconLink,
-    IconCheckDocument,
   },
   setup() {
     const store = {
@@ -88,7 +82,8 @@ export default {
       companyError: false,
       carError: false,
       interestRateError: false,
-      loanPeriodError: false,
+      loanPeriod001Error: false,
+      loanPeriod002Error: false,
       optionNameError: false,
       optionPriceError: false,
     });
@@ -157,11 +152,6 @@ export default {
             <KeyValueItem :classNames="{ item: 'text-body-3' }">
               <KeyValueTitle>사업자번호</KeyValueTitle>
               <KeyValueText>123456789</KeyValueText>
-            </KeyValueItem>
-
-            <KeyValueItem :classNames="{ item: 'text-body-3' }">
-              <KeyValueTitle>대표자 휴대폰번호</KeyValueTitle>
-              <KeyValueText>010-1234-5678</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>
@@ -950,13 +940,14 @@ export default {
               </FormHelpText>
             </FormInvalid>
           </FormListItem>
+          <!-- Case : 오토론일 경우 -->
           <FormListItem
             titleText="대출기간"
-            target="#salesNewCarCounselingLoanPeriodButton"
+            target="#salesNewCarCounselingLoanPeriod001Button"
             :selectOnly="true"
           >
-            <FormInvalid :error="state.loanPeriodError">
-              <InputBlock :error="state.loanPeriodError">
+            <FormInvalid :error="state.loanPeriod001Error">
+              <InputBlock :error="state.loanPeriod001Error">
                 <InputBlockCell :flexible="true">
                   <BasicSelect
                     :option="[
@@ -995,61 +986,68 @@ export default {
                     ]"
                     buttonTitle="대출 기간 선택하기"
                     layerTitle="대출 기간을 선택해 주세요"
-                    id="salesNewCarCounselingLoanPeriod"
-                    buttonId="salesNewCarCounselingLoanPeriodButton"
+                    id="salesNewCarCounselingLoanPeriod001"
+                    buttonId="salesNewCarCounselingLoanPeriod001Button"
                   />
                 </InputBlockCell>
               </InputBlock>
               <FormInvalidMessage>Error Message</FormInvalidMessage>
             </FormInvalid>
           </FormListItem>
+          <!-- // Case : 오토론일 경우 -->
+
+          <!-- Case : 오토할부일 경우 -->
+          <FormListItem
+            titleText="대출기간"
+            target="#salesNewCarCounselingLoanPeriod002Button"
+            :selectOnly="true"
+          >
+            <FormInvalid :error="state.loanPeriod002Error">
+              <InputBlock :error="state.loanPeriod002Error">
+                <InputBlockCell :flexible="true">
+                  <BasicSelect
+                    :option="[
+                      {
+                        value: '1',
+                        text: '12개월',
+                      },
+                      {
+                        value: '2',
+                        text: '20개월',
+                      },
+                      {
+                        value: '3',
+                        text: '24개월',
+                      },
+                      {
+                        value: '4',
+                        text: '36개월',
+                      },
+                      {
+                        value: '5',
+                        text: '48개월',
+                      },
+                      {
+                        value: '6',
+                        text: '50개월',
+                      },
+                      {
+                        value: '7',
+                        text: '60개월',
+                      },
+                    ]"
+                    buttonTitle="대출 기간 선택하기"
+                    layerTitle="대출 기간을 선택해 주세요"
+                    id="salesNewCarCounselingLoanPeriod002"
+                    buttonId="salesNewCarCounselingLoanPeriod002Button"
+                  />
+                </InputBlockCell>
+              </InputBlock>
+              <FormInvalidMessage>Error Message</FormInvalidMessage>
+            </FormInvalid>
+          </FormListItem>
+          <!-- // Case : 오토할부일 경우 -->
         </FormList>
-      </section>
-
-      <section class="row-margin-container-medium">
-        <div class="flex-box row-margin-contents">
-          <div class="flex-box__cell">
-            <h3 class="text-title-2">서류등록</h3>
-          </div>
-          <div class="flex-box__cell flex-box__cell--small">
-            <div class="text-body-3">(선택)</div>
-          </div>
-        </div>
-
-        <!-- Case : 등록 전 -->
-        <button
-          type="button"
-          :class="[$style['add-button'], 'row-margin-item']"
-        >
-          <span :class="$style['add-button__inner']">
-            <span :class="$style['add-button__text']">서류등록</span>
-            <span
-              :class="[
-                $style['add-button__icon'],
-                $style['add-button__icon--secondary'],
-              ]"
-            >
-              <IconLink />
-            </span>
-          </span>
-        </button>
-        <!-- //Case : 등록 전 -->
-
-        <!-- Case : 등록 후 -->
-        <BasicBox>
-          <div class="flex-box">
-            <div class="flex-box__cell">
-              <IconCheckDocument class="display-block" />
-            </div>
-            <div class="flex-box__cell flex-1">
-              <div class="text-body-3">등록 완료</div>
-            </div>
-            <div class="flex-box__cell">
-              <BasicButton size="mini" theme="quaternary">추가첨부</BasicButton>
-            </div>
-          </div>
-        </BasicBox>
-        <!-- //Case : 등록 후 -->
       </section>
     </div>
 
@@ -1073,7 +1071,3 @@ export default {
     </template>
   </PageContents>
 </template>
-
-<style lang="scss" module>
-@import '@/assets/scss/views/salesNewCar/SalesNewCarCounseling.scss';
-</style>

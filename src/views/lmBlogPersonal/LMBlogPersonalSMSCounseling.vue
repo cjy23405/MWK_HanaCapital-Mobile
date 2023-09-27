@@ -89,7 +89,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         고객님의 상담에<br />
-        <strong>최대한 빠르게 답변해 드리겠습니다</strong>
+        최대한 빠르게 답변해 드리겠습니다
       </PageMainText>
     </PageTextGroup>
 

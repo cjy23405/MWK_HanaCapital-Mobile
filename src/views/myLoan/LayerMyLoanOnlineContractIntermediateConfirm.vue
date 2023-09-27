@@ -72,7 +72,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>계약정보를</strong><br />
+          계약정보를<br />
           확인해 주세요
         </PageMainText>
       </PageTextGroup>

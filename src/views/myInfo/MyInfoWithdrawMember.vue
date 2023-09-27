@@ -53,7 +53,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         회원탈퇴를<br />
-        <strong>하시겠어요?</strong>
+        하시겠어요?
       </PageMainText>
       <PageSubText>본인인증이 완료되면 회원탈퇴가 완료됩니다.</PageSubText>
     </PageTextGroup>

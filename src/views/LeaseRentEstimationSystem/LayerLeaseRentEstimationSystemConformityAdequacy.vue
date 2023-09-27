@@ -113,7 +113,7 @@ export default {
       <PageTextGroup :classNames="{ wrap: 'row-margin-none' }">
         <PageMainText>
           체크리스트를<br />
-          <strong>작성해 주세요</strong>
+          작성해 주세요
         </PageMainText>
         <PageSubText>
           본 확인서는 「금융소비자 보호에 관한 법률」에 의거하여 손님의

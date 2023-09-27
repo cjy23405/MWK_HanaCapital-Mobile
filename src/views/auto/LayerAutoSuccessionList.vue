@@ -60,7 +60,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           승계 신청을 동의할<br />
-          <strong>차량을 선택해주세요</strong>
+          차량을 선택해주세요
         </PageMainText>
         <PageSubText>
           승계 신청 철회를 원하시는 경우,<br />

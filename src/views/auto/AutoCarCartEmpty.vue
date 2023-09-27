@@ -51,7 +51,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         마음에 드는 차를 담아두면<br />
-        <strong>혜택 알림을 받을 수 있어요!</strong>
+        혜택 알림을 받을 수 있어요!
       </PageMainText>
     </PageTextGroup>
 

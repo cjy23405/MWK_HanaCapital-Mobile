@@ -51,7 +51,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>김하나님, 심사 승인 되었습니다</strong><br />
+          김하나님, 심사 승인 되었습니다<br />
           다음 단계를 진행할까요?
         </PageMainText>
         <PageSubText>

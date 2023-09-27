@@ -87,7 +87,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>발급할 계약을</strong><br />
+          발급할 계약을<br />
           선택하세요
         </PageMainText>
       </PageTextGroup>
@@ -151,7 +151,7 @@ export default {
                 </KeyValueText>
               </KeyValueItem>
               <KeyValueItem :classNames="{ item: 'text-body-3' }">
-                <KeyValueTitle>결제예정금액</KeyValueTitle>
+                <KeyValueTitle>대출잔액</KeyValueTitle>
                 <KeyValueText>8,000,000 원</KeyValueText>
               </KeyValueItem>
             </KeyValue>

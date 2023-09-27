@@ -82,7 +82,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         조회기간을<br />
-        <strong>선택해 주세요</strong>
+        선택해 주세요
       </PageMainText>
     </PageTextGroup>
 
@@ -165,7 +165,7 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>다음</BasicButton>
+              <BasicButton>조회</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>

@@ -66,7 +66,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           서류등록을<br />
-          <strong>진행해주세요</strong>
+          진행해주세요
         </PageMainText>
         <PageSubText>
           파일을 첨부하신 뒤에<br />

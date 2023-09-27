@@ -57,7 +57,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님, 요청하신 견적으로<br />
-          <strong>진행이 어렵습니다</strong>
+          진행이 어렵습니다
         </PageMainText>
       </PageTextGroup>
 

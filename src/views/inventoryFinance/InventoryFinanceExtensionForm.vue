@@ -87,7 +87,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         만기연장 조건을<br />
-        <strong>선택해 주세요</strong>
+        선택해 주세요
       </PageMainText>
     </PageTextGroup>
 

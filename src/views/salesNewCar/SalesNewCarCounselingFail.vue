@@ -73,7 +73,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         정밀심사 및 대출불가 대상으로<br />
-        <strong>진행이 어렵습니다</strong>
+        진행이 어렵습니다
       </PageMainText>
       <PageSubText>문의사항은 지점으로 연락하시기 바랍니다.</PageSubText>
     </PageTextGroup>

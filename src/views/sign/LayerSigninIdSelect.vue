@@ -75,7 +75,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           통합하여 사용하실 아이디를<br />
-          <strong>선택하거나 입력해 주세요</strong>
+          선택하거나 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

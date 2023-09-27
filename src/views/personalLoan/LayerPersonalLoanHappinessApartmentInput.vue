@@ -81,7 +81,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           대출신청 정보를<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

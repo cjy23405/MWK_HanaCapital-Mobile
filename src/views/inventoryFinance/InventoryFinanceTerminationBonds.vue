@@ -101,7 +101,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         확인하실 상품을<br />
-        <strong>조회해 주세요</strong>
+        조회해 주세요
       </PageMainText>
     </PageTextGroup>
 

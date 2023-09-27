@@ -121,7 +121,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           중도상환하실 금액을<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -91,10 +91,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님이<br />
-          <strong
-            >보유하신 계약은 총 <span class="color-green">5</span>건
-            입니다</strong
-          >
+          보유하신 계약은 총 <span class="color-green">5</span>건 입니다
         </PageMainText>
       </PageTextGroup>
 

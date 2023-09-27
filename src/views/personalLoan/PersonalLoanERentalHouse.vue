@@ -94,7 +94,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           임대보증금을 담보로<br />
-          <strong>빠르고 간편한 대출</strong>
+          빠르고 간편한 대출
         </PageMainText>
       </PageTextGroup>
 

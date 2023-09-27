@@ -14,14 +14,12 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
 import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import BasicHr from '@/components/ui/common/BasicHr.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -37,14 +35,12 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
     KeyValueText,
     BasicHr,
     CarEmblem,
-    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -70,7 +66,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           선택한 차량과 입력한 차량번호의<br />
-          <strong>차량이 맞는지 확인해 주세요</strong>
+          차량이 맞는지 확인해 주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -88,9 +84,6 @@ export default {
             <h3 class="text-body-1 font-weight-medium">
               쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
             </h3>
-          </div>
-          <div class="flex-box__cell flex-box__cell--medium">
-            <CarThumb src="/images/_dummy/car-thumb.png" />
           </div>
         </div>
       </BasicBox>
@@ -116,9 +109,6 @@ export default {
                 쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
               </p>
             </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <CarThumb src="/images/_dummy/car-thumb.png" />
-            </BasicBoxHeadRight>
           </BasicBoxHead>
           <KeyValue margin="regular">
             <KeyValueItem
@@ -145,7 +135,7 @@ export default {
               }"
             >
               <KeyValueTitle>사고이력(내차 피해)</KeyValueTitle>
-              <KeyValueText>0회 / 0회</KeyValueText>
+              <KeyValueText>0회 / 0원</KeyValueText>
             </KeyValueItem>
 
             <KeyValueItem
@@ -154,7 +144,7 @@ export default {
               }"
             >
               <KeyValueTitle>사고이력(타차 가해)</KeyValueTitle>
-              <KeyValueText>0회 / 0회</KeyValueText>
+              <KeyValueText>0회 / 0원</KeyValueText>
             </KeyValueItem>
           </KeyValue>
         </BasicBox>

@@ -102,7 +102,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           오토리스 계약 만기 1개월 전까지<br />
-          <strong>만기후처리를 반드시 선택해 주세요</strong>
+          만기후처리를 반드시 선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

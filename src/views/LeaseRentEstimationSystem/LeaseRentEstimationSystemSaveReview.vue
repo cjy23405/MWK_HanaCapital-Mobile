@@ -40,6 +40,7 @@ import RoundStatus from '@/components/ui/text/RoundStatus.vue';
 import TextButton from '@/components/ui/button/TextButton.vue';
 import ColorChip from '@/components/ui/imageData/ColorChip.vue';
 import BottomSticky from '@/components/ui/common/BottomSticky.vue';
+import UnitText from '@/components/ui/text/UnitText.vue';
 
 export default {
   components: {
@@ -75,6 +76,7 @@ export default {
     TextButton,
     ColorChip,
     BottomSticky,
+    UnitText,
   },
   setup() {
     const store = {
@@ -388,7 +390,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -540,54 +542,51 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <ButtonList :classNames="{ wrap: 'row-margin-item' }">
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 장기렌트 -->
+        <!-- // Case : 가견적 - 장기렌트 -->
 
         <!-- Case : 가견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -630,7 +629,7 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -780,54 +779,51 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <ButtonList :classNames="{ wrap: 'row-margin-item' }">
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 선구매 -->
+        <!-- // Case : 가견적 - 선구매 -->
 
         <!-- Case : 가견적 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -872,7 +868,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1011,6 +1007,9 @@ export default {
                     <KeyValueText>
                       (0.000%) : 000,000원 /<br />
                       (0.000%) : 000,000원
+                      <!-- Case : 수입차일 경우 노출 -->
+                      <div>CM</div>
+                      <!-- // Case : 수입차일 경우 노출 -->
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1032,55 +1031,56 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 운용리스 -->
+        <!-- // Case : 가견적 - 운용리스 -->
 
         <!-- Case : 가견적 - 운용리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -1125,7 +1125,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1201,6 +1201,16 @@ export default {
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
+                  <!-- Case : 수입차일 경우 노출 -->
+                  <KeyValueItem
+                    :classNames="{
+                      item: 'text-body-3',
+                    }"
+                  >
+                    <KeyValueTitle>제휴사</KeyValueTitle>
+                    <KeyValueText>스타자동차주식회사</KeyValueText>
+                  </KeyValueItem>
+                  <!-- // Case : 수입차일 경우 노출 -->
                   <KeyValueItem
                     :classNames="{
                       item: 'text-body-3',
@@ -1259,6 +1269,9 @@ export default {
                     <KeyValueText>
                       (0.000%) : 000,000원 /<br />
                       (0.000%) : 000,000원
+                      <!-- Case : 수입차일 경우 노출 -->
+                      <div>CM</div>
+                      <!-- // Case : 수입차일 경우 노출 -->
                     </KeyValueText>
                   </KeyValueItem>
                   <KeyValueItem
@@ -1280,55 +1293,56 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 운용리스 (중고차) -->
+        <!-- // Case : 가견적 - 운용리스 (중고차) -->
 
         <!-- Case : 가견적 - 금융리스 (중고차) -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -1373,7 +1387,7 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1527,55 +1541,56 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 금융리스 (중고차) -->
+        <!-- // Case : 가견적 - 금융리스 (중고차) -->
 
         <!-- Case : 가견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -1618,7 +1633,7 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
+              <div class="flex-box row-margin-small">
                 <div class="flex-box__cell flex-1">
                   <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
                 </div>
@@ -1758,55 +1773,56 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">견적확정</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">견적확정</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 가견적 - 할부 -->
+        <!-- // Case : 가견적 - 할부 -->
 
         <!-- Case : 견적 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -1859,14 +1875,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2071,54 +2097,86 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <!-- Case : 동의전 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <ButtonList :classNames="{ wrap: 'row-margin-item' }">
-                  <ButtonListItem>
-                    <BasicButton size="small">신용조회동의</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                  <!-- Case : 버튼 누르기 전 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">신용조회동의</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                  <!-- // Case : 버튼 누르기 전 -->
+
+                  <!-- Case : 버튼 누른 후 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">신용조회재요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                  <!-- // Case : 버튼 누른 후 -->
+                </div>
+                <!-- // Case : 동의전 -->
+
+                <!-- Case : 동의완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">심사요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 견적 - 장기렌트 -->
+        <!-- // Case : 견적 - 장기렌트 -->
 
         <!-- Case : 견적 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -2169,14 +2227,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2381,54 +2449,86 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <!-- Case : 동의전 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <ButtonList :classNames="{ wrap: 'row-margin-item' }">
-                  <ButtonListItem>
-                    <BasicButton size="small">신용조회동의</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                  <!-- Case : 버튼 누르기 전 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">신용조회동의</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                  <!-- // Case : 버튼 누르기 전 -->
+
+                  <!-- Case : 버튼 누른 후 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">신용조회재요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                  <!-- // Case : 버튼 누른 후 -->
+                </div>
+                <!-- // Case : 동의전 -->
+
+                <!-- Case : 동의완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">심사요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 견적 - 선구매 -->
+        <!-- // Case : 견적 - 선구매 -->
 
         <!-- Case : 견적 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -2481,14 +2581,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2634,55 +2744,87 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">신용조회요청</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <!-- Case : 동의전 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <!-- Case : 버튼 누르기 전 -->
+                      <BasicButton size="small">신용조회요청</BasicButton>
+                      <!-- // Case : 버튼 누르기 전 -->
+
+                      <!-- Case : 버튼 누른 후
+                      <BasicButton size="small">신용조회재요청</BasicButton>
+                      -->
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의전 -->
+
+                <!-- Case : 동의완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">심사요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 견적 - 운용리스 -->
+        <!-- // Case : 견적 - 운용리스 -->
 
         <!-- Case : 견적 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -2733,14 +2875,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -2902,55 +3054,87 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      재견적
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton size="small">신용조회요청</BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <!-- Case : 동의전 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <!-- Case : 버튼 누르기 전 -->
+                      <BasicButton size="small">신용조회요청</BasicButton>
+                      <!-- // Case : 버튼 누르기 전 -->
+
+                      <!-- Case : 버튼 누른 후
+                      <BasicButton size="small">신용조회재요청</BasicButton>
+                      -->
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의전 -->
+
+                <!-- Case : 동의완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton size="small">심사요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 동의완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 견적 - 할부 -->
+        <!-- // Case : 견적 - 할부 -->
 
         <!-- Case : 심사 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -3027,14 +3211,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3239,89 +3433,143 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      조건 변경
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
+                <!-- Case : 심사중 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <!-- Case : 심사중, 발주완료 -->
-                <BasicButton
-                  theme="tertiary"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >서류 등록</BasicButton
-                >
-                <!-- //Case : 심사중, 발주완료 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 심사중 -->
 
                 <!-- Case : 승인 -->
-                <BasicButton
-                  theme="tertiary"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >서류 추가 등록</BasicButton
-                >
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
 
-                <BasicButton
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >발주요청</BasicButton
-                >
-                <!-- //Case : 승인 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">발주요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 승인 -->
 
                 <!-- Case : 발주요청 -->
-                <BasicButton
-                  :disabled="true"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >발주요청 완료</BasicButton
-                >
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small" :disabled="true"
+                        >발주요청 완료</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
                 <!-- // Case : 발주요청 -->
 
+                <!-- Case : 발주완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 발주완료 -->
+
                 <!-- Case : 배정, 결제완료 -->
-                <BasicButton
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >품의등록</BasicButton
-                >
-                <!-- //Case : 배정, 결제완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">품의등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 배정, 결제완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 심사 - 장기렌트 -->
+        <!-- // Case : 심사 - 장기렌트 -->
 
         <!-- Case : 심사 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -3372,14 +3620,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3584,71 +3842,83 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      조건 변경
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
-
                 <!-- Case : 심사중 -->
-                <BasicButton
-                  theme="tertiary"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >서류 등록</BasicButton
-                >
-                <!-- //Case : 심사중 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 심사중 -->
 
                 <!-- Case : 승인 -->
-                <BasicButton
-                  theme="tertiary"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >서류 추가 등록</BasicButton
-                >
-                <BasicButton
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  >품의등록</BasicButton
-                >
-                <!-- //Case : 승인 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">품의등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 승인 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 심사 - 선구매 -->
+        <!-- // Case : 심사 - 선구매 -->
 
         <!-- Case : 심사 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -3725,14 +3995,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -3924,135 +4204,177 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <!-- Case : 심사중, 발주완료 -->
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      조건 변경
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="tertiary" size="small"
-                      >서류 등록</BasicButton
-                    >
-                  </ButtonListItem>
-                </ButtonList>
-                <!-- //Case : 심사중, 발주완료 -->
-
-                <!-- Case : 배정, 승인 -->
-                <div>
+                <!-- Case : 심사중 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
                   <ButtonList
                     :wrap="true"
-                    :col="3"
-                    :classNames="{
-                      wrap: 'row-margin-contents-small row-margin-bottom-none',
-                    }"
+                    :classNames="{ wrap: 'row-margin-item' }"
                   >
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" :line="true" size="small">
-                        조건 변경
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 발송
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 보기
-                      </BasicButton>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 심사중 -->
+
+                <!-- Case : 승인 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                   </ButtonList>
 
-                  <BasicButton
-                    theme="tertiary"
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >서류 추가 등록</BasicButton
-                  >
-                  <BasicButton
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >품의등록</BasicButton
-                  >
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">품의등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
                 </div>
-                <!-- //Case : 배정, 승인 -->
+                <!-- // Case : 승인 -->
 
                 <!-- Case : 발주요청 -->
-                <div>
-                  <ButtonList
-                    :wrap="true"
-                    :classNames="{
-                      wrap: 'row-margin-contents-small row-margin-bottom-none',
-                    }"
-                  >
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" :line="true" size="small">
-                        조건 변경
-                      </BasicButton>
-                    </ButtonListItem>
-                    <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 보기
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                   </ButtonList>
 
-                  <BasicButton
-                    theme="tertiary"
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >서류 추가 등록</BasicButton
-                  >
-                  <BasicButton
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >발주요청</BasicButton
-                  >
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <!-- Case : 버튼 누르기 전 -->
+                      <BasicButton size="small">발주요청</BasicButton>
+                      <!-- // Case : 버튼 누르기 전 -->
+
+                      <!-- Case : 버튼 누른 후
+                      <BasicButton size="small" :disabled="true"
+                        >발주요청 완료</BasicButton
+                      >
+                      -->
+                    </ButtonListItem>
+                  </ButtonList>
                 </div>
-                <!-- //Case : 발주요청 -->
+                <!-- // Case : 발주요청 -->
+
+                <!-- Case : 발주완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 발주완료 -->
+
+                <!-- Case : 배정 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList
+                    :wrap="true"
+                    :classNames="{ wrap: 'row-margin-item' }"
+                  >
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">품의등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 배정 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 심사 - 운용리스 -->
+        <!-- // Case : 심사 - 운용리스 -->
 
         <!-- Case : 심사 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -4103,14 +4425,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4272,21 +4604,20 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
@@ -4294,79 +4625,72 @@ export default {
                 </KeyValue>
 
                 <!-- Case : 심사중 -->
-                <ButtonList
-                  :wrap="true"
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="quaternary" :line="true" size="small">
-                      조건 변경
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton theme="tertiary" size="small"
-                      >서류 등록</BasicButton
-                    >
-                  </ButtonListItem>
-                </ButtonList>
-                <!-- //Case : 심사중 -->
-
-                <!-- Case : 승인 -->
-                <div>
+                <div class="row-margin-contents-small row-margin-bottom-none">
                   <ButtonList
                     :wrap="true"
-                    :col="3"
-                    :classNames="{
-                      wrap: 'row-margin-contents-small row-margin-bottom-none',
-                    }"
+                    :classNames="{ wrap: 'row-margin-item' }"
                   >
                     <ButtonListItem>
-                      <BasicButton theme="quaternary" :line="true" size="small">
-                        조건 변경
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 발송
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 보기
-                      </BasicButton>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 심사중 -->
+
+                <!-- Case : 승인 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="quaternary" :line="true" size="small"
+                        >재견적</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                   </ButtonList>
 
-                  <BasicButton
-                    theme="tertiary"
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >서류 추가 등록</BasicButton
-                  >
-                  <BasicButton
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >품의등록</BasicButton
-                  >
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 추가 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">품의등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
                 </div>
-                <!-- //Case : 승인 -->
+                <!-- // Case : 승인 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 심사 - 할부 -->
+        <!-- // Case : 심사 - 할부 -->
 
         <!-- Case : 품의 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -4419,14 +4743,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4633,50 +4967,40 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <!-- Case : 품의확정 시 disabled="false" -->
-                  <ButtonListItem>
-                    <BasicButton size="small" :disabled="true">
-                      약정 URL 전송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <!-- // Case :품의확정 시 disabled="false" -->
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 품의 - 장기렌트 -->
+        <!-- // Case : 품의 - 장기렌트 -->
 
         <!-- Case : 품의 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -4727,14 +5051,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -4941,50 +5275,40 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                  <!-- Case : 품의확정 시 disabled="false" -->
-                  <ButtonListItem>
-                    <BasicButton size="small" :disabled="true">
-                      약정 URL 전송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <!-- // Case :품의확정 시 disabled="false" -->
-                </ButtonList>
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 품의 - 선구매 -->
+        <!-- // Case : 품의 - 선구매 -->
 
         <!-- Case : 품의 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -5036,14 +5360,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5237,57 +5571,45 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
-                </ButtonList>
-
-                <!-- Case : 품의확정 시 disabled="false" -->
-                <BasicButton
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  :disabled="true"
-                  >약정 URL 전송</BasicButton
-                >
-                <!-- // Case :품의확정 시 disabled="false" -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 품의 - 운용리스 -->
+        <!-- // Case : 품의 - 운용리스 -->
 
         <!-- Case : 품의 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -5338,14 +5660,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5510,57 +5842,45 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small row-margin-bottom-none',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 발송
-                    </BasicButton>
-                  </ButtonListItem>
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small"
-                      >견적서 보기</BasicButton
-                    >
-                  </ButtonListItem>
-                </ButtonList>
-
-                <!-- Case : 품의확정 시 disabled="false" -->
-                <BasicButton
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-item' }"
-                  disabled="true"
-                  >약정 URL 전송</BasicButton
-                >
-                <!-- // Case :품의확정 시 disabled="false" -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 품의 - 할부 -->
+        <!-- // Case : 품의 - 할부 -->
 
         <!-- Case : 인도 - 장기렌트 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -5580,13 +5900,13 @@ export default {
                         <div class="color-green text-body-4 font-weight-medium">
                           송금완료
                         </div>
-                        <!--  //Case : 송금완료 -->
+                        <!--  // Case : 송금완료 -->
 
                         <!-- Case : 실행완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           실행완료
                         </div>
-                        <!--  //Case : 실행완료 -->
+                        <!--  // Case : 실행완료 -->
                       </li>
                     </ul>
                   </div>
@@ -5613,14 +5933,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -5827,49 +6157,91 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
+                <!-- Case : 송금완료 - 대리점출고 Step 1 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 송금완료 - 대리점출고 Step 1 -->
 
-                  <!-- Case : 송금완료 -->
-                  <ButtonListItem>
-                    <BasicButton size="small">인도요청</BasicButton>
-                  </ButtonListItem>
-                  <!-- //Case : 송금완료 -->
-                </ButtonList>
+                <!-- Case : 송금완료 - 대리점출고 Step 2 / 특판 출고 Step 1 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">인도요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 송금완료 - 대리점출고 Step 2 / 특판 출고 Step 1 -->
+
+                <!-- Case : 송금완료 - 대리점출고 Step 3 / 특판 출고 Step 2 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small" :disabled="true"
+                        >인도요청</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 송금완료 - 대리점출고 Step 3 / 특판 출고 Step 2 -->
+
+                <!-- Case : 실행완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 실행완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 인도 - 장기렌트 -->
+        <!-- // Case : 인도 - 장기렌트 -->
 
         <!-- Case : 인도 - 선구매 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -5889,13 +6261,13 @@ export default {
                         <div class="color-green text-body-4 font-weight-medium">
                           송금완료
                         </div>
-                        <!--  //Case : 송금완료 -->
+                        <!--  // Case : 송금완료 -->
 
                         <!-- Case : 실행완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           실행완료
                         </div>
-                        <!--  //Case : 실행완료 -->
+                        <!--  // Case : 실행완료 -->
                       </li>
                     </ul>
                   </div>
@@ -5920,14 +6292,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">선구매</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6134,49 +6516,74 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <ButtonList
-                  :classNames="{
-                    wrap: 'row-margin-contents-small',
-                  }"
-                >
-                  <ButtonListItem>
-                    <BasicButton :line="true" size="small">
-                      견적서 보기
-                    </BasicButton>
-                  </ButtonListItem>
+                <!-- Case : 송금완료 - Step 1 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">인도요청</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 송금완료 - Step 1 -->
 
-                  <!-- Case : 송금완료 -->
-                  <ButtonListItem>
-                    <BasicButton size="small">인도요청</BasicButton>
-                  </ButtonListItem>
-                  <!-- //Case : 송금완료 -->
-                </ButtonList>
+                <!-- Case : 송금완료 - Step 2 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small" :disabled="true"
+                        >인도요청</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 송금완료 - Step 2 -->
+
+                <!-- Case : 실행완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 실행완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 인도 - 선구매 -->
+        <!-- // Case : 인도 - 선구매 -->
 
         <!-- Case : 인도 - 운용리스 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -6196,19 +6603,19 @@ export default {
                         <div class="color-green text-body-4 font-weight-medium">
                           송금완료
                         </div>
-                        <!--  //Case : 송금완료 -->
+                        <!--  // Case : 송금완료 -->
 
                         <!-- Case : 차량등록완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           차량등록완료
                         </div>
-                        <!--  //Case : 차량등록완료 -->
+                        <!--  // Case : 차량등록완료 -->
 
                         <!-- Case : 실행완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           실행완료
                         </div>
-                        <!--  //Case : 실행완료 -->
+                        <!--  // Case : 실행완료 -->
                       </li>
                     </ul>
                   </div>
@@ -6235,14 +6642,24 @@ export default {
                   >
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6436,106 +6853,97 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <!-- Case : 송금완료 - 대리점 출고 -->
-                <div class="row-margin-contents-small">
-                  <BasicButton :line="true" size="small">
-                    견적서 보기
-                  </BasicButton>
-
-                  <ButtonList
-                    :classNames="{
-                      wrap: 'row-margin-item',
-                    }"
-                  >
+                <!-- Case : 송금완료 - 차량번호 등록 전 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
-                      <BasicButton theme="tertiary" size="small">
-                        서류 등록
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
                       <BasicButton size="small">차량번호 등록</BasicButton>
                     </ButtonListItem>
                   </ButtonList>
                 </div>
-                <!-- //Case : 송금완료 - 대리점 출고 -->
+                <!-- // Case : 송금완료 - 차량번호 등록 전 -->
 
-                <!-- Case : 송금완료 - 특판 출고 -->
-                <div class="row-margin-contents-small">
-                  <ButtonList
-                    :classNames="{
-                      wrap: 'row-margin-top-none',
-                    }"
-                  >
+                <!-- Case : 송금완료 - Step 1 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 보기
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
                       <BasicButton size="small">인도요청</BasicButton>
                     </ButtonListItem>
                   </ButtonList>
                 </div>
-                <!-- //Case : 송금완료 - 특판 출고 -->
+                <!-- // Case : 송금완료 - Step 1 -->
 
-                <!-- Case : 차량등록완료 -->
-                <div class="row-margin-contents-small">
-                  <BasicButton :line="true" size="small">
-                    견적서 보기
-                  </BasicButton>
-
-                  <ButtonList
-                    :classNames="{
-                      wrap: 'row-margin-item',
-                    }"
-                  >
+                <!-- Case : 송금완료 - Step 2 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
-                      <BasicButton theme="tertiary" size="small">
-                        서류 등록
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                     <ButtonListItem>
-                      <BasicButton size="small">차량번호 확인</BasicButton>
+                      <BasicButton size="small" :disabled="true"
+                        >인도요청</BasicButton
+                      >
                     </ButtonListItem>
                   </ButtonList>
                 </div>
-                <!-- //Case : 차량등록완료 -->
+                <!-- // Case : 송금완료 - Step 2 -->
 
                 <!-- Case : 실행완료 -->
-                <BasicButton
-                  :line="true"
-                  size="small"
-                  :classNames="{ wrap: 'row-margin-contents-small' }"
-                >
-                  견적서 보기
-                </BasicButton>
-                <!-- //Case : 실행완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 실행완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 인도 - 운용리스 -->
+        <!-- // Case : 인도 - 운용리스 -->
 
         <!-- Case : 인도 - 할부 -->
         <UiAccordionItem :classNames="{ item: 'row-margin-small' }">
@@ -6555,19 +6963,19 @@ export default {
                         <div class="color-green text-body-4 font-weight-medium">
                           송금완료
                         </div>
-                        <!--  //Case : 송금완료 -->
+                        <!--  // Case : 송금완료 -->
 
                         <!-- Case : 실행완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           실행완료
                         </div>
-                        <!--  //Case : 실행완료 -->
+                        <!--  // Case : 실행완료 -->
 
                         <!-- Case : 차량등록완료 -->
                         <div class="color-green text-body-4 font-weight-medium">
                           차량등록완료
                         </div>
-                        <!--  //Case : 차량등록완료 -->
+                        <!--  // Case : 차량등록완료 -->
                       </li>
                     </ul>
                   </div>
@@ -6592,14 +7000,24 @@ export default {
                   <RoundStatus theme="denary" :block="true">할부</RoundStatus>
                 </div>
               </div>
-              <div class="flex-box row-margin-item">
-                <div class="flex-box__cell flex-1">
-                  <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
-                </div>
-                <div class="flex-box__cell">
-                  <UiAccordionOpener
-                    :classNames="{ button: $style['opener'] }"
-                  />
+              <div class="row-margin-small">
+                <p class="text-body-4 color-gray">제네시스 더 뉴 G70</p>
+                <div class="flex-box row-margin-small">
+                  <div class="flex-box__cell">
+                    <div class="text-body-4 color-gray-quaternary">
+                      월 납입금
+                    </div>
+                  </div>
+                  <div class="flex-box__cell flex-1">
+                    <UnitText rightUnit="원" size="regular" align="right"
+                      >234,300</UnitText
+                    >
+                  </div>
+                  <div class="flex-box__cell">
+                    <UiAccordionOpener
+                      :classNames="{ button: $style['opener'] }"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -6764,75 +7182,70 @@ export default {
                   >
                     <KeyValueTitle>메모</KeyValueTitle>
                     <KeyValueText>
-                      <div class="flex-box align-items-start">
-                        <div class="flex-box__cell flex-1">메모 내용</div>
-                        <div class="flex-box__cell">
-                          <div
-                            :class="['flex-box', $style['text-button-area']]"
-                          >
-                            <div class="flex-box__cell">
-                              <TextButton
-                                :underline="true"
-                                theme="secondary"
-                                :block="true"
-                                >기록</TextButton
-                              >
-                            </div>
+                      <div class="flex-box">
+                        <div class="flex-box__cell flex-1">
+                          <div class="ellipsis">
+                            메모 내용이 노출됩니다. 길어질 경우 말줄임 처리되어
+                            보여집니다.
                           </div>
+                        </div>
+                        <div class="flex-box__cell">
+                          <TextButton
+                            :underline="true"
+                            theme="secondary"
+                            :block="true"
+                            >기록</TextButton
+                          >
                         </div>
                       </div>
                     </KeyValueText>
                   </KeyValueItem>
                 </KeyValue>
 
-                <div class="row-margin-contents-small">
-                  <ButtonList
-                    :classNames="{
-                      wrap: 'row-margin-top-none',
-                    }"
-                  >
+                <!-- Case : 송금완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
                     <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 발송
-                      </BasicButton>
-                    </ButtonListItem>
-                    <ButtonListItem>
-                      <BasicButton :line="true" size="small">
-                        견적서 보기
-                      </BasicButton>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
                     </ButtonListItem>
                   </ButtonList>
 
-                  <!-- Case : 송금완료, 실행완료 -->
-                  <BasicButton
-                    theme="tertiary"
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >서류 등록</BasicButton
-                  >
-
-                  <!-- Case : 송금완료 -->
-                  <BasicButton
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >차량번호 등록</BasicButton
-                  >
-                  <!-- //Case : 송금완료 -->
-
-                  <!-- Case : 실행완료 -->
-                  <BasicButton
-                    size="small"
-                    :classNames="{ wrap: 'row-margin-item' }"
-                    >차량번호 확인</BasicButton
-                  >
-                  <!-- //Case : 실행완료 -->
-                  <!-- //Case : 송금완료, 실행완료 -->
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton theme="tertiary" size="small"
+                        >서류 등록</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton size="small">차량번호 등록</BasicButton>
+                    </ButtonListItem>
+                  </ButtonList>
                 </div>
+                <!-- // Case : 송금완료 -->
+
+                <!-- Case : 실행완료 -->
+                <div class="row-margin-contents-small row-margin-bottom-none">
+                  <ButtonList :classNames="{ wrap: 'row-margin-item' }">
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 발송</BasicButton
+                      >
+                    </ButtonListItem>
+                    <ButtonListItem>
+                      <BasicButton :line="true" size="small"
+                        >견적서 보기</BasicButton
+                      >
+                    </ButtonListItem>
+                  </ButtonList>
+                </div>
+                <!-- // Case : 실행완료 -->
               </div>
             </UiAccordionLayer>
           </BasicBox>
         </UiAccordionItem>
-        <!-- //Case : 인도 - 할부 -->
+        <!-- // Case : 인도 - 할부 -->
       </UiAccordion>
 
       <!-- Case : 결과 없을 때 -->

@@ -50,7 +50,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님, 요청하신 견적으로<br />
-          <strong>심사가 완료되었습니다</strong>
+          심사가 완료되었습니다
         </PageMainText>
       </PageTextGroup>
 

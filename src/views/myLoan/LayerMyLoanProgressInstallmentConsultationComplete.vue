@@ -66,7 +66,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님은 할부약정을 통한<br />
-          <strong>물품/제품 구매가 가능합니다</strong>
+          물품/제품 구매가 가능합니다
         </PageMainText>
         <PageSubText>
           물품 수령/설치는 판매점에 확인해주시기 바랍니다.<br />

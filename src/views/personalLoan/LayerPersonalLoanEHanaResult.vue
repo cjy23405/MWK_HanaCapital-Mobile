@@ -62,7 +62,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>한도와 금리가</strong><br />
+          한도와 금리가<br />
           확인되었습니다
         </PageMainText>
       </PageTextGroup>

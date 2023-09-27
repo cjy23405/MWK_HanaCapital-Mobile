@@ -97,8 +97,8 @@ export default {
       <PageTextGroup>
         <PageMainText>
           차량 대금은 금융사에서 지급<br />
-          <strong>손님은 해당 금액을 분할 납부하는</strong><br />
-          <strong>금융 상품입니다</strong>
+          손님은 해당 금액을 분할 납부하는<br />
+          금융 상품입니다
         </PageMainText>
       </PageTextGroup>
 

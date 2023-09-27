@@ -74,7 +74,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         내 차, 저 아파트 얼마일까?<br />
-        <strong>시세 알아보기</strong>
+        시세 알아보기
       </PageMainText>
     </PageTextGroup>
 

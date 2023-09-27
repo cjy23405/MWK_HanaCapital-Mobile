@@ -54,7 +54,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님은 한도조회 결과<br />
-          <strong>본사 심사가 필요합니다</strong>
+          본사 심사가 필요합니다
         </PageMainText>
         <PageSubText>판매점과 협의 후 진행 바랍니다.</PageSubText>
       </PageTextGroup>

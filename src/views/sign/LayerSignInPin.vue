@@ -42,7 +42,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full">
-    <FullPopup bg="secondary">
+    <FullPopup>
       <template v-slot:head>
         <FullPopupHead />
       </template>
@@ -53,7 +53,7 @@ export default {
         }"
       >
         간편비밀번호를<br />
-        <strong>입력해 주세요</strong>
+        입력해 주세요
       </PageMainText>
 
       <FormInvalid :error="state.error">

@@ -70,7 +70,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           <span class="color-green">할부</span> 상담 안내를 위한<br />
-          <strong>연락처를 입력해 주세요</strong>
+          연락처를 입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

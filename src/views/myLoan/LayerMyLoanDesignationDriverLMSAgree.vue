@@ -60,7 +60,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           서비스 이용약관에<br />
-          <strong>동의해 주세요</strong>
+          동의해 주세요
         </PageMainText>
       </PageTextGroup>
 

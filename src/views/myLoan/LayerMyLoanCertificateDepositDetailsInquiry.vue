@@ -79,7 +79,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>발급할 기간을</strong><br />
+          발급할 기간을<br />
           선택하세요
         </PageMainText>
       </PageTextGroup>

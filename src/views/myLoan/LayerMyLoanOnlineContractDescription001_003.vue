@@ -54,13 +54,13 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출금을 만기 전에 상환하고 싶은데</strong><br />
+          대출금을 만기 전에 상환하고 싶은데<br />
           가능한가요?
         </PageMainText>
       </PageTextGroup>
 
       <IllustObject
-        type="calculator"
+        type="repayment"
         :classNames="{ wrap: 'row-margin-none' }"
       />
 

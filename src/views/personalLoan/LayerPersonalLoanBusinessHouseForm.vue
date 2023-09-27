@@ -98,7 +98,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출정보를</strong><br />
+          대출정보를<br />
           입력해주세요
         </PageMainText>
         <PageSubText>

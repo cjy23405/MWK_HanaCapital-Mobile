@@ -63,7 +63,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         언제 어디서나<br />
-        <strong><span class="color-green">하나머니</span>로 편리하게</strong>
+        <span class="color-green">하나머니</span>로 편리하게
       </PageMainText>
     </PageTextGroup>
 

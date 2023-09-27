@@ -63,7 +63,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           상품설명서<br />
-          <strong>확인 안내</strong>
+          확인 안내
         </PageMainText>
         <PageSubText>
           이 설명서는 『금융소비자 보호에 관한 법률』 제19조 제1항, 동 법 시행령

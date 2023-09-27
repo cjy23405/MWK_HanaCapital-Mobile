@@ -57,7 +57,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           금리인하를<br />
-          <strong>요구할 수 있어요</strong>
+          요구할 수 있어요
         </PageMainText>
       </PageTextGroup>
 

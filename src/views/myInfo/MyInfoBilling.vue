@@ -61,7 +61,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         변경하실 계약 상품을<br />
-        <strong>선택하세요</strong>
+        선택하세요
       </PageMainText>
       <PageSubText>
         계약 상품을 선택하면 청구정보 변경 화면으로 이동 후 청구방법, 주소,

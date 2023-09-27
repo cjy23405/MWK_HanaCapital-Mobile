@@ -41,7 +41,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>필요한 증명서를</strong><br />
+          필요한 증명서를<br />
           선택하세요
         </PageMainText>
       </PageTextGroup>

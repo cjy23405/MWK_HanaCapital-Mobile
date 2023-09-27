@@ -59,7 +59,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         하나캐피탈과 함께<br />
-        <strong>든든하고 행복한 금융</strong>
+        든든하고 행복한 금융
       </PageMainText>
     </PageTextGroup>
 

@@ -58,13 +58,13 @@ export default {
         <!-- Case : 단건일 때 && 내용 없을 때 -->
         <PageMainText>
           계약관련 서류를 받아보실<br />
-          <strong>방법을 선택해 주세요</strong>
+          방법을 선택해 주세요
         </PageMainText>
         <!-- // Case : 단건일 때 && 내용 없을 때 -->
 
         <!-- Case : 다건일 때 -->
         <PageMainText>
-          <strong>조회하실 계약관련 서류를</strong><br />
+          조회하실 계약관련 서류를<br />
           선택해 주세요
         </PageMainText>
         <!-- // Case : 다건일 때 -->

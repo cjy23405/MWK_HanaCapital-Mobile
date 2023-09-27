@@ -57,9 +57,7 @@ export default {
       </template>
 
       <PageTextGroup>
-        <PageMainText>
-          <strong>이용 재등록을</strong><br />완료했어요
-        </PageMainText>
+        <PageMainText>이용 재등록을<br />완료했어요</PageMainText>
       </PageTextGroup>
 
       <IllustObject type="complete" />

@@ -73,7 +73,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         상담등록이<br />
-        <strong>완료되었습니다</strong>
+        완료되었습니다
       </PageMainText>
       <PageSubText
         >고객님은 <span class="color-blue">자동승인</span> 고객입니다.<br />

@@ -54,7 +54,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>운전면허증을</strong><br />
+          운전면허증을<br />
           준비해 주세요
         </PageMainText>
       </PageTextGroup>

@@ -122,7 +122,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           양수인(승계후이용자) 정보를<br />
-          <strong>입력해주세요</strong>
+          입력해주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -641,7 +641,7 @@ export default {
           <PageMainText>
             <span class="color-green font-weight-regular">신청인 정보</span
             >를<br />
-            <strong>입력해주세요</strong>
+            입력해주세요
           </PageMainText>
           <PageSubText>(심사결과 안내 및 승계상담 담당자 정보)</PageSubText>
         </PageTextGroup>

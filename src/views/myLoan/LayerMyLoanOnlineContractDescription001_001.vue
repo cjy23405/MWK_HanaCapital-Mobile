@@ -54,7 +54,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>신용대출 상품의</strong><br />
+          신용대출 상품의<br />
           특징은 무엇인가요?
         </PageMainText>
       </PageTextGroup>

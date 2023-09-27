@@ -72,7 +72,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           승계 신청이<br />
-          <strong>완료되었습니다</strong>
+          완료되었습니다
         </PageMainText>
         <PageSubText>
           심사결과는 등록하신 휴대폰 번호로 문자(SMS)안내 드리겠습니다.

@@ -85,7 +85,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           차량번호를<br />
-          <strong>등록해 주세요</strong>
+          등록해 주세요
         </PageMainText>
       </PageTextGroup>
 

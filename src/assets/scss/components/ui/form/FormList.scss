@@ -53,8 +53,6 @@
     margin: 2px 0 0 2px;
     border-radius: 50%;
     background-color: $color-semantic-essential;
-    opacity: 0;
-    transition: opacity 0.2s;
 
     &-text {
       @include for-a11y;
@@ -92,10 +90,6 @@
         margin-left: 2px;
         margin-bottom: 0;
       }
-    }
-
-    .form__require {
-      opacity: 1;
     }
 
     .form__area {

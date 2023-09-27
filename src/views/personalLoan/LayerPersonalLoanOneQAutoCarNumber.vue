@@ -73,7 +73,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           자동차정보를<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

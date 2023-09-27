@@ -82,7 +82,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>청구서 수령방법을</strong><br />
+          청구서 수령방법을<br />
           입력해 주세요
         </PageMainText>
       </PageTextGroup>

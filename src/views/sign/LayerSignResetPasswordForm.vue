@@ -71,7 +71,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>새로운 비밀번호를</strong><br />
+          새로운 비밀번호를<br />
           입력해 주세요
         </PageMainText>
         <PageSubText>

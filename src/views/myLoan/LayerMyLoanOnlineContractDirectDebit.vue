@@ -69,6 +69,7 @@ export default {
       paymentDateError: false,
       importedBankError: false,
       domesticAccountError: false,
+      domesticBankNameError: false,
     });
 
     return {
@@ -95,14 +96,14 @@ export default {
       <PageTextGroup>
         <!-- Case : 기본 -->
         <PageMainText>
-          <strong>자동이체 정보를</strong><br />
+          자동이체 정보를<br />
           입력해 주세요
         </PageMainText>
         <!-- // Case : 기본 -->
 
         <!-- Case : 제휴사 중고차 약정일 경우 문구 노출 -->
         <PageMainText>
-          <strong>대출금 지급 및 자동이체</strong><br />
+          대출금 지급 및 자동이체<br />
           계좌(본인계좌)를 입력해 주세요.
         </PageMainText>
         <!-- // Case : 제휴사 중고차 약정일 경우 문구 노출 -->
@@ -202,6 +203,26 @@ export default {
         </FormListItem>
         <!-- // Case : 오토 할부/론에서만 결제일 선택 후 노출 -->
 
+        <!-- Case : 개인사업자일 경우 -->
+        <FormListItem
+          titleText="예금주명"
+          target="layerMyLoanOnlineContractDirectDebitDomesticBankName"
+        >
+          <FormInvalid :error="state.domesticBankNameError">
+            <InputBlock :error="state.domesticBankNameError">
+              <InputBlockCell :flexible="true">
+                <BasicInput
+                  title="예금주명"
+                  id="layerMyLoanOnlineContractDirectDebitDomesticBankName"
+                  defaultValue="김하나"
+                />
+              </InputBlockCell>
+            </InputBlock>
+            <FormInvalidMessage>Error Message</FormInvalidMessage>
+          </FormInvalid>
+        </FormListItem>
+        <!-- // Case : 개인사업자일 경우 -->
+
         <FormListItem
           titleText="은행"
           target="#layerMyLoanOnlineContractDirectDebitImportedBankButton"
@@ -233,9 +254,6 @@ export default {
                   id="layerMyLoanOnlineContractDirectDebitDomesticAccount"
                 />
               </InputBlockCell>
-              <template v-slot:right>
-                <BasicButton size="mini" theme="quaternary">확인</BasicButton>
-              </template>
             </InputBlock>
             <FormInvalidMessage>
               계좌번호를 다시 확인해 주세요.

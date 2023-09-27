@@ -98,7 +98,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           중도상환신청 계약을<br />
-          <strong>선택해 주세요</strong>
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 

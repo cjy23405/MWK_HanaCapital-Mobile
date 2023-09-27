@@ -1,5 +1,5 @@
 <script>
-// My_M06_l003
+// My_M06_l004
 
 import { ref } from 'vue';
 
@@ -60,7 +60,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           청약철회 신청이<br />
-          <strong>완료되었습니다</strong>
+          완료되었습니다
         </PageMainText>
         <PageSubText
           >17시 내로 입금해 주시면 청약철회 후 문자로 안내

@@ -79,7 +79,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           연장 신청정보를<br />
-          <strong>확인해 주세요</strong>
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

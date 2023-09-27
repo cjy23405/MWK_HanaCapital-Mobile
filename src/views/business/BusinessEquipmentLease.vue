@@ -103,7 +103,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           개인사업자 및 법인 대상<br />
-          <strong>의료장비, 스크린골프, 설비 등</strong>
+          의료장비, 스크린골프, 설비 등
         </PageMainText>
       </PageTextGroup>
 

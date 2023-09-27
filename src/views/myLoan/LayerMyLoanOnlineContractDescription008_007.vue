@@ -53,7 +53,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           금리인하요구<br />
-          <strong>대상 상품이 아니에요</strong>
+          대상 상품이 아니에요
         </PageMainText>
       </PageTextGroup>
 

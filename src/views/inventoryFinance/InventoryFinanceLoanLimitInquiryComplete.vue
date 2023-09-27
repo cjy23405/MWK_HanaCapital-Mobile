@@ -65,7 +65,7 @@ export default {
         <span class="color-green font-weight-regular">
           주식회사알차이노베이션</span
         >님<br />
-        <strong>한도조회 결과입니다</strong>
+        한도조회 결과입니다
       </PageMainText>
     </PageTextGroup>
 
@@ -99,7 +99,10 @@ export default {
             }"
           >
             <ButtonListItem>
-              <BasicButton>확인</BasicButton>
+              <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+            </ButtonListItem>
+            <ButtonListItem>
+              <BasicButton>대출신청</BasicButton>
             </ButtonListItem>
           </ButtonList>
         </div>

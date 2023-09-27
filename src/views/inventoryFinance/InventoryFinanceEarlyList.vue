@@ -125,7 +125,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         중도상환 신청을 원하시는 상품을<br />
-        <strong>선택해 주세요</strong>
+        선택해 주세요
       </PageMainText>
     </PageTextGroup>
 

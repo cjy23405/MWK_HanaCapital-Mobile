@@ -105,7 +105,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           로켓출고!<br />
-          <strong>하나캐피탈 다이렉트 렌터카</strong>
+          하나캐피탈 다이렉트 렌터카
         </PageMainText>
       </PageTextGroup>
 

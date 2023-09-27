@@ -52,7 +52,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>할부금융 상품이</strong><br />
+          할부금융 상품이<br />
           무엇인가요?
         </PageMainText>
       </PageTextGroup>

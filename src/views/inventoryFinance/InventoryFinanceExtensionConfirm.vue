@@ -77,7 +77,7 @@ export default {
     <PageTextGroup>
       <PageMainText>
         만기연장 처리 후<br />
-        <strong>변경된 대출정보를 확인해 주세요</strong>
+        변경된 대출정보를 확인해 주세요
       </PageMainText>
     </PageTextGroup>
 
@@ -112,15 +112,6 @@ export default {
           <KeyValueText>
             <span class="color-green font-weight-medium">11.700,000 원</span>
           </KeyValueText>
-        </KeyValueItem>
-
-        <KeyValueItem
-          :classNames="{
-            item: 'text-body-3',
-          }"
-        >
-          <KeyValueTitle>원금잔액</KeyValueTitle>
-          <KeyValueText>13,000,000 원</KeyValueText>
         </KeyValueItem>
 
         <KeyValueItem

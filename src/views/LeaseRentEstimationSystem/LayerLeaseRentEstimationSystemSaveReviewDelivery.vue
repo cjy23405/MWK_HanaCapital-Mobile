@@ -1,6 +1,7 @@
 <script>
 // LR_M04_l001
 import { ref, reactive } from 'vue';
+import { DateTime } from 'luxon';
 
 import UiLayer from '@/components/ui/layer/UiLayer.vue';
 import PopupButton from '@/components/ui/layer/PopupButton.vue';
@@ -23,6 +24,8 @@ import FormHelpText from '@/components/ui/form/FormHelpText.vue';
 import BasicSelect from '@/components/ui/form/BasicSelect.vue';
 import BasicDatepicker from '@/components/ui/form/BasicDatepicker.vue';
 import BasicTextarea from '@/components/ui/form/BasicTextarea.vue';
+
+import AlertSystem from '@/components/ui/layer/AlertSystem.vue';
 
 export default {
   components: {
@@ -47,6 +50,8 @@ export default {
     BasicSelect,
     BasicDatepicker,
     BasicTextarea,
+
+    AlertSystem,
   },
   setup() {
     const state = reactive({
@@ -58,13 +63,49 @@ export default {
       timeError: false,
       addressError: false,
       noteError: false,
+
+      testDateVal: '',
     });
 
     const layer = ref(null);
+    const alert = ref(null);
+    const testDatepicker = ref(null);
+
+    const alertOpen = (options) => {
+      alert.value.open(options);
+    };
+
+    const testDateChange = () => {
+      const luxonDate = DateTime.fromFormat(state.testDateVal, 'yyyy.MM.dd', {
+        locale: 'ko_KR',
+      });
+      const isWeekend = luxonDate.weekday === 6 || luxonDate.weekday === 7;
+
+      if (isWeekend) {
+        alertOpen({
+          title: '토요일 or 일요일 입니다.',
+          message:
+            '여기에 내용이 표시될 예정입니다.\n줄바꿈은 \\n 이용.\n세 줄일 경우는 이렿게 표시됩니다.',
+          buttons: [
+            {
+              callback: (closeFn) => {
+                closeFn(0);
+              },
+              closeAfterCallback: () => {
+                testDatepicker.value.getElement().show();
+              },
+            },
+          ],
+        });
+      }
+    };
 
     return {
       state,
       layer,
+      alert,
+      testDatepicker,
+      testDateChange,
     };
   },
 };
@@ -84,7 +125,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           차량 인도 정보를<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
         <PageSubText>하나캐피탈 탁송을 신청합니다.</PageSubText>
       </PageTextGroup>
@@ -92,6 +133,7 @@ export default {
       <FormList>
         <FormListItem
           titleText="인도지 담당자"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryName001"
         >
@@ -110,6 +152,7 @@ export default {
 
         <FormListItem
           titleText="담당자 연락처"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryNumber001"
         >
@@ -168,6 +211,7 @@ export default {
 
         <FormListItem
           titleText="인도 요청일"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryDateButton"
         >
@@ -175,9 +219,12 @@ export default {
             <InputBlock :error="state.dateError">
               <InputBlockCell :flexible="true">
                 <BasicDatepicker
+                  ref="testDatepicker"
                   title="인도 요청일"
                   id="layerLeaseRentEstimationSystemSaveReviewDeliveryDate"
                   buttonId="layerLeaseRentEstimationSystemSaveReviewDeliveryDateButton"
+                  v-model="state.testDateVal"
+                  :pickerChange="testDateChange"
                 />
               </InputBlockCell>
             </InputBlock>
@@ -187,6 +234,7 @@ export default {
 
         <FormListItem
           titleText="인도 요청 시간"
+          titleOptionalText="(필수)"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryHourButton"
         >
@@ -244,6 +292,7 @@ export default {
 
         <FormListItem
           titleText="인도지 주소"
+          titleOptionalText="(필수)"
           :forceFocus="true"
           :require="true"
           target="#layerLeaseRentEstimationSystemSaveReviewDeliveryAddressSearch"
@@ -323,4 +372,6 @@ export default {
       </template>
     </FullPopup>
   </UiLayer>
+
+  <AlertSystem ref="alert" />
 </template>

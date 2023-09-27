@@ -59,7 +59,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           서비스를 일부<br />
-          <strong>이용할 수 없습니다</strong>
+          이용할 수 없습니다
         </PageMainText>
         <PageSubText>
           자세한 사항은<br />
@@ -82,7 +82,7 @@ export default {
               <div :class="$style['icon-list__icon']"><IconCustomer /></div>
               <div :class="$style['icon-list__content']">
                 <div :class="$style['icon-list__title']">고객센터</div>
-                <div :class="$style['icon-list__text']">평일 09:00 ~ 19:00</div>
+                <div :class="$style['icon-list__text']">평일 09:00 ~ 18:00</div>
               </div>
               <BasicButton
                 tagName="a"

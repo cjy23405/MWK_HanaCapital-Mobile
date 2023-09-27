@@ -56,7 +56,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>할부상담안내를</strong><br />
+          할부상담안내를<br />
           받아보세요
         </PageMainText>
         <PageSubText>

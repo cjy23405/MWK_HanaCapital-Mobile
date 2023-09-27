@@ -56,7 +56,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           구매 유의사항을<br />
-          <strong>확인해 주세요</strong>
+          확인해 주세요
         </PageMainText>
       </PageTextGroup>
 

@@ -59,7 +59,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           고객님께서는<br />
-          <strong>현재 대출진행이 어렵습니다</strong>
+          현재 대출진행이 어렵습니다
         </PageMainText>
         <PageSubText>
           자세한 사항은 담당자 또는<br />

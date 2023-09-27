@@ -39,7 +39,7 @@ export default {
 
 <template>
   <UiLayer ref="layer" type="full" v-slot="layerSlotProps">
-    <FullPopup bg="secondary">
+    <FullPopup>
       <template v-slot:head>
         <FullPopupHead>
           <template v-slot:right>
@@ -54,7 +54,7 @@ export default {
         }"
       >
         확인을 위해 비밀번호를<br />
-        <strong>한번 더 입력해 주세요.</strong>
+        한번 더 입력해 주세요.
       </PageMainText>
 
       <FormInvalid :error="state.error">

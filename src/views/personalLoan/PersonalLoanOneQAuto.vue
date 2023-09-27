@@ -105,7 +105,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           내 차만 있다면<br />
-          <strong>특별한도와 금리혜택까지</strong>
+          특별한도와 금리혜택까지
         </PageMainText>
       </PageTextGroup>
 

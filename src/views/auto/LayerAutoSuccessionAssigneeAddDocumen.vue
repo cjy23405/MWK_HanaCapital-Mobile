@@ -85,7 +85,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           심사서류를<br />
-          <strong>등록해주세요</strong>
+          등록해주세요
         </PageMainText>
       </PageTextGroup>
 

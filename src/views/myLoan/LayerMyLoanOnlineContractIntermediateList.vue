@@ -69,7 +69,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님은<br />
-          <strong>중도금 대출 대상자가 아닙니다</strong>
+          중도금 대출 대상자가 아닙니다
         </PageMainText>
       </PageTextGroup>
       <!-- // Case : 중도금 대출 내역이 없는 경우 -->
@@ -79,7 +79,7 @@ export default {
         <PageMainText>
           김하나님은<br />
           아현 푸르지오 클라시티에<br />
-          <strong>중도금 대출 대상자입니다</strong>
+          중도금 대출 대상자입니다
         </PageMainText>
         <PageSubText>대출신청을 진행해 주세요.</PageSubText>
       </PageTextGroup>

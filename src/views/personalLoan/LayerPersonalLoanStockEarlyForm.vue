@@ -95,7 +95,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           중도상환신청 조건을<br />
-          <strong>입력해 주세요</strong>
+          입력해 주세요
         </PageMainText>
       </PageTextGroup>
 

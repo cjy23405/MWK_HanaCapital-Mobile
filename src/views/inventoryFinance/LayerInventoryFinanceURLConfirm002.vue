@@ -63,14 +63,14 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>대출 신청 정보를</strong><br />
+          대출 신청 정보를<br />
           확인해 주세요
         </PageMainText>
       </PageTextGroup>
 
       <div>
         <section class="row-margin-container-medium">
-          <h3 class="text-title-2 row-margin-contents">계약자 정보</h3>
+          <h3 class="text-title-2 row-margin-contents">대출자 정보</h3>
 
           <BasicBox>
             <KeyValue margin="regular">

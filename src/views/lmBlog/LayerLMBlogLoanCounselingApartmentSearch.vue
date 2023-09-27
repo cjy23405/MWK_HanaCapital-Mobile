@@ -51,19 +51,21 @@ export default {
         </FullPopupHead>
       </template>
 
+      <!-- Case : 검색 후 미노출 -->
       <PageTextGroup>
         <PageMainText>
           아파트를<br />
-          <strong>검색해 주세요</strong>
+          검색해 주세요
         </PageMainText>
         <PageSubText>
           본인 소유 또는 배우자 공동 소유만<br />
           대출 진행이 가능합니다.
         </PageSubText>
       </PageTextGroup>
+      <!-- // Case : 검색 후 미노출 -->
 
       <div>
-        <InputBlock type="search" :classNames="{ wrap: 'row-margin-contents' }">
+        <InputBlock>
           <InputBlockCell :flexible="true">
             <BasicInput
               type="search"
@@ -76,7 +78,8 @@ export default {
           </InputBlockCell>
         </InputBlock>
 
-        <ul :class="$style['basic-list']">
+        <!-- Case : 검색 후 미노출 -->
+        <ul :class="[$style['basic-list'], 'row-margin-contents']">
           <li :class="$style['basic-list__item']">
             <div :class="$style['basic-list__symbol']"></div>
             <div :class="$style['basic-list__content']">
@@ -90,6 +93,7 @@ export default {
             </div>
           </li>
         </ul>
+        <!-- // Case : 검색 후 미노출 -->
       </div>
 
       <!-- Case : 검색 후 노출 -->

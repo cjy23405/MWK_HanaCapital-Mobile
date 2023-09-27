@@ -52,7 +52,7 @@ export default {
 
       <PageTextGroup>
         <PageMainText>
-          <strong>궁금한 점이나 불만사항이 있는 경우</strong><br />
+          궁금한 점이나 불만사항이 있는 경우<br />
           어떻게 하면 되나요?
         </PageMainText>
       </PageTextGroup>

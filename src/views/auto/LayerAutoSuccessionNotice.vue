@@ -48,7 +48,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           승계 유의사항을<br />
-          <strong>확인해주세요</strong>
+          확인해주세요
         </PageMainText>
       </PageTextGroup>
 

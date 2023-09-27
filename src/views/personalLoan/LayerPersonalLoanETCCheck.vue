@@ -72,7 +72,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           김하나님을 위한<br />
-          <strong>한도와 금리가 확인되었습니다</strong>
+          한도와 금리가 확인되었습니다
         </PageMainText>
       </PageTextGroup>
 

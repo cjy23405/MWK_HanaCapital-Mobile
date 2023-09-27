@@ -67,7 +67,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           연락가능한 시간을<br />
-          <strong>선택해 주세요</strong>
+          선택해 주세요
         </PageMainText>
       </PageTextGroup>
 
@@ -164,6 +164,10 @@ export default {
                     {
                       value: '17',
                       text: '17',
+                    },
+                    {
+                      value: '18',
+                      text: '18',
                     },
                   ]"
                   buttonTitle="종료시간 선택하기"

@@ -14,7 +14,6 @@ import PageMainText from '@/components/ui/text/PageMainText.vue';
 import BasicBox from '@/components/ui/common/BasicBox.vue';
 import BasicBoxHead from '@/components/ui/common/BasicBoxHead.vue';
 import BasicBoxHeadLeft from '@/components/ui/common/BasicBoxHeadLeft.vue';
-import BasicBoxHeadRight from '@/components/ui/common/BasicBoxHeadRight.vue';
 import KeyValue from '@/components/ui/text/KeyValue.vue';
 import KeyValueItem from '@/components/ui/text/KeyValueItem.vue';
 import KeyValueTitle from '@/components/ui/text/KeyValueTitle.vue';
@@ -22,7 +21,6 @@ import KeyValueText from '@/components/ui/text/KeyValueText.vue';
 import UnitText from '@/components/ui/text/UnitText.vue';
 import IllustObject from '@/components/ui/common/IllustObject.vue';
 import CarEmblem from '@/components/ui/imageData/CarEmblem.vue';
-import CarThumb from '@/components/ui/imageData/CarThumb.vue';
 
 export default {
   components: {
@@ -38,7 +36,6 @@ export default {
     BasicBox,
     BasicBoxHead,
     BasicBoxHeadLeft,
-    BasicBoxHeadRight,
     KeyValue,
     KeyValueItem,
     KeyValueTitle,
@@ -46,7 +43,6 @@ export default {
     UnitText,
     IllustObject,
     CarEmblem,
-    CarThumb,
   },
   setup() {
     const layer = ref(null);
@@ -72,7 +68,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           고객님께서는<br />
-          <strong>심사 승인 대상입니다</strong>
+          심사 승인 대상입니다
         </PageMainText>
       </PageTextGroup>
 
@@ -94,9 +90,6 @@ export default {
                 쏘나타 뉴 라이즈 1.6T-Gdi 스마트 (마이 스마트 핏)
               </h3>
             </BasicBoxHeadLeft>
-            <BasicBoxHeadRight>
-              <CarThumb src="/images/_dummy/car-thumb.png" />
-            </BasicBoxHeadRight>
           </BasicBoxHead>
 
           <KeyValue verticalAlign="center">
@@ -172,7 +165,10 @@ export default {
           }"
         >
           <ButtonListItem>
-            <BasicButton>확인</BasicButton>
+            <BasicButton :line="true" theme="quaternary">이전</BasicButton>
+          </ButtonListItem>
+          <ButtonListItem>
+            <BasicButton>계속</BasicButton>
           </ButtonListItem>
         </ButtonList>
       </template>

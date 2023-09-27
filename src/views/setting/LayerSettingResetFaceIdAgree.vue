@@ -54,7 +54,7 @@ export default {
       <PageTextGroup>
         <PageMainText>
           Face ID를<br />
-          <strong>(재)등록합니다</strong>
+          (재)등록합니다
         </PageMainText>
       </PageTextGroup>
 
